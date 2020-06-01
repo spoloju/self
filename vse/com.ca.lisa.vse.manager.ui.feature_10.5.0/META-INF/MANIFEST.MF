@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: cruisecontrol
+Created-By: Apache Maven 3.0.5
+Build-Jdk: 1.8.0_161
+
+Name: feature.xml
+SHA-256-Digest: oy3rN8aGqVFauu3yQh9/Y4Pk1rf4i0AWRwHMi6RpwKI=
+
