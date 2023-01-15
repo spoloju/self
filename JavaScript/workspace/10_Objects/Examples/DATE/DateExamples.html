@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+var datref =new Date("December 21, 2018 20:21:00");
+
+// getDate method gives only the value of day : 21
+document.write(" Get Date Output before replacement:  " +datref.getDate());
+
+datref.setDate(27);
+
+document.write(" <br />Get Date Output after replacement:  " +datref.getDate());
+
+
+//getDay() : return the day of the week
+// monday : 1 ,tue :2...... sunday : 7
+document.write("<br /> Get DaY Output :  " +datref.getDay());
+
+
+//getHours
+document.write("<br /> Get Hours Output :  " +datref.getHours());
+//getMinutes
+document.write("<br /> Get Minutes Output :  " +datref.getMinutes());
+
+//getMonth
+document.write("<br /> Get Month Output :  " +datref.getMonth());
+
+
+
+//getYear
+//document.write("<br /> Get Year Output :  " +datref.getYear());
+
+
+var date2ref = new Date(1999, 6,21,14,21,16);
+
+// 21-06-1999
+document.write("<br /> Get localedate Output as String   :  " +date2ref.toLocaleDateString());
+// ‎14‎:‎21‎:‎16 
+document.write("<br /> Get localetime Output as String   :  " +date2ref.toLocaleTimeString());
+
+
+//21‎-‎07‎-‎1999‎ ‎14‎:‎21‎:‎16 
+document.write("<br /> Output as String   :  " +date2ref.toLocaleString());
+
+//Wed Jul 21 1999 14:21:16 GMT-0700 (Pacific Daylight Time) 
+document.write("<br /> toString output  :  " +date2ref.toString());
+
+
+//document.write("<br /> toLocaleFormat output  :  " +date2ref.toLocaleFormat("%A, %B %e,%Y"));
+//var dateref3= Date.parse("December 19, 2018 20:21:00");
+
+//document.write("<br /> Parse output  :  " +dateref3);
+</script>
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Form Validations After Submit Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bcontent">
+        <h2>Bootstrap Form Validation</h2>
+        <hr />
+        <form class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter first name.</div>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter last name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter last name.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter email.</div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="chkterms" required> I agree all terms & conditions
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please agree terms & conditions.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script>
+        // JavaScript to disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to apply validation styles
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>

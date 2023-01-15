@@ -1,0 +1,79 @@
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+var sample = new String("Welcome to Angular session");
+
+document.write("<br />Charecter at position 5 : " +sample.charAt(5));
+document.write("<br />Charecter at position 8 : " +sample.charAt(8));
+document.write("<br />Charecter at position 12 : " +sample.charAt(12));
+
+var sample1 = new String("AMARPreet");
+var sample2 = new String("Komal");
+
+var sample3 = sample1.concat(sample2);
+document.write("<br />Full Name : " +sample3);
+
+var fruits = "apple  is red, orange is yellow,apple is green,mango is green,Apple is taste";
+var rep =/apple/gi;
+
+var newSetFruits=fruits.replace(rep,"banana");
+
+document.write("<br />fruits  : " +fruits);
+document.write("<br />newSetfruits  : " +newSetFruits);
+
+
+// substring begin
+var casestudy = "Amar startedpractice with w3schools which is good at beginner stage";
+
+document.write("<br />Complete string : " +casestudy);
+
+document.write("<br /> first portion : " +casestudy.substring(0,10));
+
+document.write("<br /> last portion : " +casestudy.substring(32,50));
+// substring end
+
+//split start
+var technologies = "java c c++ cobal python angular";
+
+var splitout=technologies.split(" ",5);
+
+document.write("<br />"+technologies);
+document.write("<br />"+splitout);
+// split end
+
+// uppercase start
+var information = "Tough times never lost, but tough people do";
+
+document.write("<br />"+information.toUpperCase());
+// upper case end
+
+// lower start
+var info = "RICH DAD POOR DAD";
+
+document.write("<br />"+info.toLowerCase());
+// lower  end
+
+//indexOf
+
+var details=new String("Amar address details are located in address box of his farmhouse");
+var indexvalue = details.indexOf("address");
+var lastindexvalue = details.lastIndexOf("address");
+document.write("<br />Index value is : "+indexvalue);
+document.write("<br />Last Index value is : "+lastindexvalue);
+
+
+</script>
+</body>
+
+
+
+
+
+</html>

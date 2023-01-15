@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Toggleable Tabs Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bcontent">
+        <h2>Bootstrap Toggleable Tabs</h2>
+        <hr />
+        <!--Navigation Tabs-->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tutorials">Tutorials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#articles">Articles</a>
+            </li>
+        </ul>
+        <!--Tabs Content-->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="home">Home Section</div>
+            <div class="tab-pane fade" id="tutorials">Tutorials Section</div>
+            <div class="tab-pane fade" id="articles">Articles Section</div>
+        </div>
+    </div>
+</body>
+</html>

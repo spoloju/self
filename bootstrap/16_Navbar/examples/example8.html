@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Navbar with Forms Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bcontent">
+        <h2>Bootstrap Navbar with Forms</h2>
+        <hr />
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Tutlane</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tutorials</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Microsoft</a>
+                        <a class="dropdown-item" href="#">JAVA</a>
+                        <a class="dropdown-item" href="#">Database</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Articles</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+</body>
+</html>

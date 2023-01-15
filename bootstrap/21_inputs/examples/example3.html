@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Checkboxes and Radios Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bcontent">
+        <h2>Bootstrap Checkboxes and Radios</h2>
+        <hr />
+        <form>
+            <div class="form-group row">
+                <label for="password" class="col-form-label col-sm-2">Gender</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="genderadios" id="rdbmale" value="male" checked>
+                        <label class="form-check-label" for="gridRadios1">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="genderadios" id="rdbfemale" value="female">
+                        <label class="form-check-label" for="gridRadios2">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-form-label col-sm-2">Languages</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="langchk" id="chkeng" value="english">
+                        <label class="form-check-label" for="english">English</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="langchk" id="chkhnd" value="telugu">
+                        <label class="form-check-label" for="telugu">Telugu</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

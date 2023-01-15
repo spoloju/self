@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Form Validation Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bcontent">
+        <h2>Bootstrap Form Validation</h2>
+        <hr />
+        <form class="was-validated">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter first name.</div>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter last name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter last name.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please enter email.</div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="chkterms" required> I agree all terms & conditions
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please agree terms & conditions.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

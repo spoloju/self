@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Show Popover on Hover Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\jQuery\jquery.min.js"></script>
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\popper\popper.min.js"></script>
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+</head>
+<body>
+    <div class="container bcontent">
+        <h2>Bootstrap Show Popover on Hover</h2>
+        <hr />
+        <button class="btn btn-danger" data-toggle="popover" data-trigger="hover" title="Hover Popover" 
+        data-content="Hover on the button element to show the popover">Hover Popover</button>
+    </div>
+</body>
+</html>

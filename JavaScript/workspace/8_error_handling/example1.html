@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Error_Handling</h1>
+        <script>
+
+           try{
+            documet.write("error"+"<br>"); 
+            document.write("no error"+"<br>");
+            documnet.write("error"+"<br>");
+            document.write("no error"+"<br>");
+            document.write("no error"+"<br>");
+            document.write("no error"+"<br>");
+        } catch(e){
+            console.log(e);
+                document.write(e.message+"<br>");
+                document.write(e.stack+"<br>");
+                document.write(e.description+"<br>");
+                document.write("mdits"+"<br>");
+            }
+
+            finally{
+
+                document.write("allways finally executed");
+            }
+
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+        function divide(){
+           var numerator=Number(prompt("enter numerator: "));
+            
+            var denominator=Number(prompt("enter denomirator: "));
+            
+        try{
+            if(denominator == 0){
+                throw{
+                    err: "Divided by zero",
+                    msg: "denominator cannot be Zero"
+                };
+            }
+            else{
+                document.write("output: "+(numerator/denominator));
+
+            }
+        }
+
+        catch(e){
+                document.write("error: "+e.err+"<br>");
+                document.write("message: "+e.msg+"<br>"); 
+             
+        }
+
+    }
+    
+        divide();
+
+
+
+        </script>
+    </body>
+</html>

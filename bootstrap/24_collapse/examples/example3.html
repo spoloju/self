@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Collapsible Accordion Menu Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\jQuery\jquery.min.js"></script>
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\popper\popper.min.js"></script>
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bcontent">
+        <h2>Bootstrap Collapsible Accordion Menu</h2>
+        <hr />
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+          Collapse Item #1
+        </button>
+      </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                    <div class="card-body">
+                        TrainUonline is an eLearning organization providing quality online tutorials, articles, 
+                        and information related to the latest technologies.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
+          Collapse Item #2
+        </button>
+      </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                    <div class="card-body">
+                        TrainUonline is an eLearning organization providing quality online tutorials, articles,
+                         and information related to the latest technologies.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">
+          Collapse Item #3
+        </button>
+      </h2>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                    <div class="card-body">
+                        TrainUonline is an eLearning organization providing quality online tutorials, articles, and information 
+                        related to the latest technologies.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

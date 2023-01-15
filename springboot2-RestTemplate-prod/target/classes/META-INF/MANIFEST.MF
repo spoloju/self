@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springboot2-RestTemplate-producer
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: DELL
+Implementation-Vendor-Id: com.mdits
+Build-Jdk: 1.8.0_261
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springboot2-RestTemplate-producer
+Created-By: Maven Integration for Eclipse
+

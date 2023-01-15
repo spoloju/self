@@ -1,0 +1,28 @@
+<!-- User defined exception-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+
+            function mdits(){
+                var x= Number(prompt("enter your age"));
+            try{
+                    if(x=="") throw "empty";
+                    if(x<18)  throw  " Minor ";
+                    if(x>=18) throw " major ";
+                    if(isNaN(x)) throw "wrong, please enter number only"; 
+                }
+            catch(e){
+                document.write('you are  '+e);
+                }
+
+            }
+
+            mdits();
+        
+        </script>
+
+    </body>
+
+</html>

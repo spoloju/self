@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+<script >
+
+
+//JSON.stringify()  ----> converts jsonobject to json string  :   client to server   : 
+
+
+//var objdata = {"Name" : "Abhi", "Location" : "Delhi" };
+
+// JSON Object 
+//{
+ //"customer":{"Name" : "Abhi", "Location" : "Delhi" }
+//}
+
+// Json Array
+
+//{
+//"customers":["ABHI","venkat","Sravya"]
+//}
+
+//var convertedStringdata = JSON.stringify(objdata);
+
+
+//JSON.parse()      ---->  converting string to jsonobject
+
+var stringdata = '{"Name" : "Abhi", "address"  :null,"Location" : "Delhi" ,"age" : 28,"status" : true}';
+
+var obj = JSON.parse(stringdata);
+
+document.write(" Result : "+obj.Location);
+
+document.write(" Result : "+obj["Location"]);
+
+</script>
+</body>
+
+
+
+
+
+</html>

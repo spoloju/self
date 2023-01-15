@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<script type="text/javascript">
+ function AMAR(age,color,country){
+ this.age=age;
+ this.color=color;
+ this.country=country;
+ this.idea=idea;
+ this.add=add;
+ 
+ }
+ 
+ function idea(){
+ 
+ document.write("I plan for world destruction bomb" +"<br>");
+ 
+ }
+ 
+ function add(a,b){
+ 
+ 
+ var c= a+b;
+ document.write("Addition of a and b is :" +c +"<br>");
+ 
+ }
+
+</script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+var amarRef = new AMAR(37,"white","INDIA"); 
+document.write("Amar age is : " +amarRef.age+"<br>");
+document.write("Amar color is : " +amarRef.color+"<br>");
+document.write("Amar country is : " +amarRef.country+"<br>");
+amarRef.idea();
+amarRef.add(4,5);
+
+</script>
+
+
+</body>
+
+
+
+
+
+</html>

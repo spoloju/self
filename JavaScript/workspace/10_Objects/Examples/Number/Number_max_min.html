@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<script type="text/javascript">
+
+function displayValue(){
+
+var max_value= Number.MAX_VALUE;
+var min_value= Number.MIN_VALUE;
+document.write("Maximum value defined  for Number Object is : " +max_value+"<br>");
+document.write("Minimum value defined  for Number Object is : " +min_value+"<br>");
+}
+ 
+ function bookdetails(){
+ 
+var book = new Object();
+book.mrpprice=100;
+book.discountprice=99;
+
+
+document.write("Book MRP Price : " +book.mrpprice+"<br>");
+document.write("Book Discount Price : " +book.discountprice+"<br>");
+}
+
+</script>
+
+</head>
+<body>
+
+Built IN Number Object : <input type="button"  value="Click Me" onclick="displayValue();"/>
+
+User Defined Object <input type="button"  value="Kick Me" onclick="bookdetails();"/>
+
+</body>
+
+
+
+
+
+</html>

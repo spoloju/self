@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Grid Layout Nesting Columns Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+    <script src="F:\bootstrap\bootstrap-4.5.2-dist\bootstrap-4.5.2-dist\js\bootstrap.min.js"></script>
+    <style>
+        .content {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-bottom:15px"></div>
+        <div class="row content">
+            <div class="col-sm-9 bg-info">First Col
+                <div class="row content">
+                    <div class="col-xs-8 col-sm-6 bg-warning">
+                        Col 1 inside first column
+                    </div>
+                    <div class="col-xs-4 col-sm-6 bg-danger">
+                        Col 2 inside first column
+                    </div>
+                </div>
+            </div>
+            <div class="col order-4 bg-warning">Second Col</div>
+        </div>
+    </div>
+</body>
+</html>
