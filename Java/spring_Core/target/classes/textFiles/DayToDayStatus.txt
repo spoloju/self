@@ -1,0 +1,318 @@
+
+Spring is a server side framework to build applications
+
+  Spring framework consists of multiple modules
+  
+     Spring Core
+     Spring JDBC
+     Spring JMS
+     Spring Rest Web Services
+     Spring Boot
+     
+ To work with spring framework we need number of dependency library files
+ 
+ In order to get all these dependency library files loaded we use maven tool
+ 
+  Maven is a build tool which takes care of dependency management
+  
+     Build Tool   --- which builds the complete application into 1 file with an extension of either .jar or .war 
+     Dependency Management -- which takes care of downloading all the required library files 
+     						and ensuring them to be available to our application during runtime
+     						
+ Maven internally maintains 2 repositories
+ 
+      local repository
+          -- during maven software installation process it creates .m2 folder under which we get all 
+          			dependent library files loaded
+      
+      global repository
+          -- if we are requesting for new library files which are not available in .m2 folder then 
+            maven will download the libraries from google and maintains back up copy in .m2 folder
+            
+            
+   Spring Core
+   
+   	
+   	  Note - In Spring Core,  A Class which consists of properties & methods of entity without any business logic methods. 
+   	  Such class are called as POJO classes.
+   	
+      Beans  -- Bean is nothing but an object created by spring framework based on bean configuration we do in xml file
+      					or based on annotations we use
+      
+      
+      
+      ApplicationContext  (I)
+      
+           -- ClassPathXmlApplicationContext (C)    -- which is capable to load xml file from src/main/resources folder of maven project
+           -- FileSystemXmlApplicationContext (C)   -- when you don't have beans.xml file in  src/main/resources then you have to use FileSystemXmlApplicationContext
+           		and provide absolute path . (ex FileSystemXmlApplicationContext("drive path + src/test/java"))
+            
+          
+Summary :
+   HttpSession
+     creating session object
+     storing data in session
+     pulling data from session
+     how to get access to already created session obejct
+     destroying already created session object
+   Serialization and Deserialization
+   
+   Spring Core
+     Beans
+     ClasspathXMLApplicationContext       
+     
+     
+     
+     
+     
+       
+   
+   ######################################################################
+            
+            
+    Dependency Injection   -- Process of injecting the data for the dependent properties of the class during bean creation process is called as 
+    								Dependency Injection
+    
+    
+       Setter Injection
+           -- Injecting the data for the dependent properties of the class through using setter methods of the class is called as Setter Injection
+              During this process
+              			Object gets created through using default constructor method
+              			Data in the object gets injected through using setter methods of that class
+             ex : 
+                 <bean class="com.beans.Employee"  id="emp">
+			    	 <property name="emplId" value="90"></property>
+			    	 <property name="emplName" value="harsha"></property>
+			    	 <property name="salary" value="5000"></property>
+			    	 <property name="bonus" value="900"></property>
+			    </bean>
+   Note : During setter injection process, default constructor method and setter methods in that class are mandatory
+   				if either of them are missing then bean creation fails
+   				
+       
+       Constructor Injection
+       		-- Injecting the data for the dependent properties of the class through using parameterised constructor method of the class is called as 
+       					constructor injection
+       					During this process
+       							Object gets created through using parameterised constructor method of that class 
+       							Data in the object gets injected through using parameterised constructor method of the class
+       		  ex : 
+       		  	  <bean class="com.beans.Employee" id="emp2">
+				    	 <constructor-arg value="80"></constructor-arg>
+				    	 <constructor-arg value="harika"></constructor-arg>
+				    	 <constructor-arg value="6000"></constructor-arg>
+				    	 <constructor-arg value="600"></constructor-arg>
+				  </bean>     
+      Note : During constructor injection process, parameterised constructor method is mandatory in the class
+      				if it is not found then bean creation fails
+            
+            
+Different ways to load xml file during spring application start up ---
+   ClassPathXmlApplicationContext -- predefined class as part of spring framework in order to load xml file present under src/main/resources folder
+   			In this scenario we just need to provide relative path         
+            
+   FileSystemXmlApplicationContext  -- predefined class as part of spring framework in order to load xml file present in any other folder
+   			In this scenario we need to provide absolute path starting from drive name
+   
+   
+   
+   Bean Scopes  -- on every bean tag we can define scope attribute through which we communicate to framework regarding how objects should 
+   						be created based on requesting the container to get the bean
+   
+     scope = "singleton"
+        -- Irrespective of no of times we call container.getBean method, only once an object will be created in spring container 
+        			and the same object will be referred through all the variables
+     
+     scope = "prototype"
+        -- Every time we call container.getBean method, every time we get a new object created in spring container based on the 
+        		respective bean configuration process
+     
+     
+     
+   Bean Inheritance  -- Process of sharing the data from 1 bean to other bean through using parent attribute is called as bean inheritance
+   
+   Note : To perform bean inheritance, respective classes should be in parent and child relationship
+   
+   
+   
+###############################################
+   
+   
+   Dependency check    -- attribute through which we check whether data is getting injected to the properties of the class or not
+   								during bean creation process
+   								
+   dependency-check="simple"   -- JVM checks whether data is getting injected for all raw properties of class or not
+   										during bean creation process
+   										 
+   dependency-check="objects"  -- JVM checks whether data is getting injected for all object type of properties of class or not
+   										during bean creation process
+   										
+   dependency-check="all"   -- JVM checks whether data is getting injected for all properties of class or not 
+   										during bean creation process
+   										
+   		Note : If we configure dependency-check attribute on bean and if we violate injecting the data then 
+   					bean creation fails     
+   					
+   	*****'
+   	  When we are injecting the data for raw properties of the class then we use value attribute
+   	  When we are injecting the data for object type of properties of the class then we use ref attribute
+            
+Summary :
+   Dependency Injection
+      setter injection
+      constructor injection
+   Bean Scopes
+     scope="singleton"
+     scope="prototype"
+   Bean Inheritance
+      parent attribute
+   Dependency-Check
+       none
+       simple
+       objects
+       all
+        
+        
+      #########################  
+  
+  May 23 -- 9 PM      
+        
+        BeanFactoryContainer VS ApplicationContextContainer  
+        
+          Creating spring container using BeanFactory implementation is a legacy way to create spring container
+          ApplicationContext is enhancement on top of BeanFactory  
+            
+    When we use implementation of BeanFactory then it performs lazy loading
+        lazy loading   -- when we try to load xml file, it just loads xml file but it wont create any objects in spring container
+        			when we explicitly ask container.getBean method thats when it creates object in spring container
+        
+    When we use implementation of ApplicationContext then it performs early loading
+        early loading   -- when we try to load xml file, during xml file loading time itself, JVM creates all the objects 
+        		based on bean configurations we do in xml file
+        
+            
+   Autowiring   -- Automating the process of dependency injection for object type of properties in the class using framework itself 
+   							is called as Autowiring
+   							
+   		autowire="byName"       
+   				Spring identifies right bean to be injected based on which bean id is matching with class property name
+   							respective bean will be automatically injected to our bean properties
+   		
+   		autowire="byType"
+   		       Spring identifies right bean to be injected based on when there is atleast 1 eligible bean of specific class type
+   		       		no matter whether the bean id is matching or not matching with class property name
+   		       		
+   		   Note : 
+   		      In case of autowire="byType", spring will be looking for only 1 eligible bean of same type
+   		      	when spring finds only 1 eligible bean then it gets injected
+   		      	suppose if there are more than 1 eligible beans then we get exception saying as 
+   		      	NoUniqueBeanDefinitionException: 
+   		      	No qualifying bean of type [com.autowiring.Address] is defined: expected single matching bean but found 2: adrObj,adrObj2   		       		
+   		       		
+   		       		(Above problem can be resolved using @Qualifier annotation)
+   		       	
+   		       		
+   		autowire="constructor"
+   		    In case of autowire="constructor", spring will first identify right bean through byType scenario
+   		    
+   		     when we are having only 1 bean identified through byType scenario then respective bean will be automatically injected
+   		     
+   		     When we are having more than 1 bean of same type then among them which bean to be injected will be decided again through byName scenario
+   		     
+   		        autowire="constructor"    -- byType + byName
+            
+            
+Note :
+
+  In case of autowire=  byname and bytype   ---  (setter injection happens)
+  				object gets created through executing default constructor method 
+  				data gets injected through executing setter methods of the class
+  				
+  In case of autowire=  constructor    --- (constructor injection happens)
+  				object gets created and data gets injected through executing parameterised constructor method of the class
+            
+   
+Annotations  ----  We can do actions in spring framework through using predefined annotations
+
+  Every predefined annotation will be having its supporting class 
+    CTRL + SHFT + O  -- will import the predefined class related to given annotation
+    
+    When we use annotations in spring application then we have to configure below tags in xml file
+    
+       <context:annotation-config></context:annotation-config>
+         through above xml tag we convey spring framework that we are using annotations in a spring application
+   
+   <context:component-scan base-package="com.annotations"></context:component-scan>
+        through above xml tag we convey spring framework regarding which package is having the classes which are annotated
+
+  @Component      
+  	 --- when we annotate @Component on top of the class then we get a bean created for that class 
+  	 			@Component  -- bean gets created with name same as class name
+  	 			@Component(value="emp")   -- bean gets created with name what we provide in the value attribute
+  	 			
+  @Autowire   -- will perform autowiring for the dependent properties of the class during bean creation process (by default through byType scenario)
+  @Qualifier  -- if we have more than 1 eligible bean of same type then using @Qualifier we convey which bean to pick among them to inject
+  
+  
+  Summary of Spring Core Module
+  
+      maven introduction
+      .m2
+      local repository
+      global repository
+      pom.xml
+      maven dependency
+         build tool
+         dependency Management
+      bean
+        class
+        id
+      dependency Injection
+         setter injection
+         constructor injection
+      bean scopes
+        scope="singleton"
+        scope="prototype"
+      how to prove above concepts using hashcode
+      bean inheritance
+        parent
+      dependency-check
+        none
+        simple
+        objects
+        all
+      value
+      ref
+      lazy loading
+      early loading
+      autowiring
+         byName
+         byType
+         constructor
+      annotations
+        how to let spring to know that we are using annotations in spring application
+        how to give the information regarding package name in which we are having the classes annotated
+        @Component
+        @Component(value="")
+        @Qualifier
+        @Autowired
+  
+  
+  Spring JDBC
+  
+  @Controller
+  @Service
+  @Repository
+  @RequestBody
+  @ResponseBody
+  @RequestParam
+  @RequestMapping
+            
+            
+            
+            
+            
+            
+            
+            
+            

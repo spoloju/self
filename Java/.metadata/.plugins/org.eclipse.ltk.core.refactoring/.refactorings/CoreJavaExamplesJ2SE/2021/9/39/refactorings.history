@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;multiThreading.SleepDemo&apos; to &apos;SleepMethodDemo&apos;&#x0D;&#x0A;- Original project: &apos;CoreJavaExamplesJ2SE&apos;&#x0D;&#x0A;- Original element: &apos;multiThreading.SleepDemo&apos;&#x0D;&#x0A;- Renamed element: &apos;multiThreading.SleepMethodDemo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SleepDemo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;multiThreading{SleepDemo.java[SleepDemo" matchStrategy="1" name="SleepMethodDemo" qualified="false" references="true" similarDeclarations="false" stamp="1632369630414" textual="false" version="1.0"/>
+</session>

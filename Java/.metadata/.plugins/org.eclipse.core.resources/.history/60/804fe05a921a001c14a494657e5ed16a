@@ -1,0 +1,15 @@
+package files;
+
+import java.io.File;
+
+public class ListDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String location= "C:/Users/shravankumar/Documents/zoom/babutraining/DemoLocation/";
+		
+		File f1 = new File(location);
+	}
+
+}

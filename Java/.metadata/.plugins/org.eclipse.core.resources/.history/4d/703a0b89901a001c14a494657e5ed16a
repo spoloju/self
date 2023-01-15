@@ -1,0 +1,11 @@
+package files;
+
+public class FileMethodDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String location= "C:/Users/shravankumar/Document/zoom/babutraining/DemoLocation/df.txt";
+	}
+
+}
+

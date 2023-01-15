@@ -1,0 +1,277 @@
+
+Standalone Applications or Desktop Applications 
+    --- Applications which run with main method
+    
+Web Applications
+   -- Applications which can be deployed in server and can be executed from browser
+   
+   To build Web Applications we need Servlet type of java programs
+   
+   
+   What is meant by Servlet ?
+     -- Servlet is a special type of java program which can be executed from browser
+       in order to receive the data from browser to servlet in the form of request and 
+       to deliver the data to browser from servlet in the form of response
+       
+   Why do we use Servlets ?
+      ---- to build web applications
+      
+   How to create Servlet type of java program ?
+      -- Create a normal java class and extends HttpServlet java program
+      
+   Note : All the predefined classes and interfaces related to servlets concept are present under javax.servlet package
+   
+   this package is present in a file called as servlet-api.jar which is part of tomcat servet lib folder
+   
+   
+Unlike desktop applications for servlets in order to execute we have certain predefined methods
+
+  doGet  -- method arguments are HttpServletRequest and HttpServletResponse
+  
+  HttpServletRequest is capable to receive the data from browser to servlet in the form of request
+  HttpServletResponse is capable to deliver the data from servlet to browser in the form of response
+  
+  
+  STEP 1 -- Create a  normal java program and make the program to behave as servlet program through extends HttpServlet
+  
+  STEP 2 -- Define the statements in the predefined methods of Servlet java programs
+  
+  STEP 3 -- Configure Servlet type of programs in the web.xml file  ******
+  			Note : Add tomcat server location to eclipse servers tab
+  
+  STEP 4 -- Deploying in server and starting server
+  
+  STEP 5  -- Configuring the URL to give a request from browser to servlet program
+  				localhost:8080/appName/url
+  				
+  				localhost   -- represents our machine in which 
+  
+  
+May 15th -- 2 PM IST
+
+  How to deliver response from servlet program to browser
+       resp.setContentType("text/html");   -- to give information regarding what type of data are we delivering as response
+       resp.getWriter()  -- will return an object of type as PrintWriter
+       
+       Through calling .println method of PrintWriter java class we can write some data on to the browser as response
+       
+  
+  How to give request from html file of browser 
+      using form html tag we submit a request from browser to servlet java program
+      
+      <form action="" method="">
+      
+      </form>
+      
+      using action attribute we give the information regarding to which servlet java program we give the request 
+      using method attribute we give the information regarding to which method of servlet java program we give the request
+      
+      
+  
+  How to read the data from request in servlet java program
+      -- using name attribute we identify every html element in a unique way from the request
+      
+       req.getParameter("usrName")  --- this stmt reads the data from a html element which is defined with name attribute value of usrName 
+       
+  
+  Difference between doGet and doPost methods
+    doGet
+       -- will be used when the requirement is to get the data from servlet to browser
+       -- when we send data to doGet method, data gets exposed in browser url
+       -- we can send data to doGet method with a size limit of 256KB
+       
+    doPost
+      -- will be used to submit the data of more html elements from browser to servlet
+      -- when we send data to doPost method, nothing gets exposed in browser url
+      -- we can send data to doPost method without any size limit
+  
+  html   -- servlet   -- jdbc  --- db    (complete flow from browser to database of an application)
+  
+  Servlet Life Cycle
+      -- Different methods executed from birth of Servlet object till destruction of Servlet object are called as Servlet Life Cycle Methods
+      
+      STEP 1 --  default constructor -- object creation
+      STEP 2 --   init method
+      STEP 3 --  doGet/doPost 
+      STEP 4 --  destroy
+      
+      Out of Which, STEP 1,2,4 will be executed only once irrespective of no of requests we may give from browser to Servlet java program
+      STEP 3 will be executed every time we give a request to any of the method from Servlet java program
+      
+      By Default, Object creation for Servlet java program will be done when we give the request to Servlet java program for the first time
+  
+  load-on-startup tag
+     -- If we wish to get the servlet object created during server startup time itself then we configure loadonstartup tag in web.xml file 
+     		during servlet configuration process
+  
+  Summary :
+    How to deliver response from Servlet program to browser
+    How to give request from html file to servlet
+    How to read the data from request object
+    difference between doGet and doPost
+    html -- servlet -- jdbc  -- db
+    Servlet Lifune Cycle methods
+    load-on-startup
+  
+May 21st --- 2 PM
+  
+  Servlet Chaining   -- Chaining the request from 1 servlet to other servlet java class is called as Servlet Chaining
+      .forward   -- then only the response from final servlet program participating in servlet chaining will be delivered to browser
+      .include   -- collective responses from all servlet programs participating in servlet chaining will be delivered to browser
+      .sendRedirect
+      
+      
+      response in  sendRedirect
+          we get response only from final servlet program participating in servlet chaining
+          data passed during initial request is not available in the servlet program participating in servlet chaining
+      
+  
+  Difference between .forward and .include
+    Response from only final servlet program will be delivered to browser when we do servlet chaining using .forward mode of servlet chaining 
+    where as 
+    Collective responses from all the servlet programs will be delivered to browser in case of .include mode of servlet chaining
+   
+      
+  Difference between .forward and .sendRedirect
+    Response only from final servlet program will be delivered to browser even when we do servlet chaining with respect to .forward or .sendRedirect
+     BUT
+     It is the same request which will be chained across all the servlets in case of .forward mode of servlet chaining
+     where as 
+     It will be new request which will be chained to other servlet program to which we are doing servlet chaining
+  
+  
+  Servlet Response Status Codes  --- indicates how request is getting executed at server
+     200   --- which indicates request is successfully executed
+     302   --- which indicates incomplete response (which is going to invoke another new request from browser which happens in case of .sendRedirect)
+     400   --- which indicates bad request  (when data given in request object is not matching to the data expected by web service)
+     404   --- when we are not able to identify resource or servlet with given url pattern
+     500   --- When we get any exception at server side when we give a request then we get 500 response status code
+    
+    
+    Filters
+    
+    Filter  -- Filter is a special type of servlet program which takes care of validating the request 
+    					and in positive scenario we can chain the request from Filter to intended servlet program 
+    					    in negative scenario we can redirect the request from filter to browser
+    					
+Summary :
+     --> Servlet Chaining
+         --> .forward
+         --> .include
+         --> .sendRedirect
+     --> Servlet Response Status Codes
+    --> Introduction to Filters
+    					
+  
+May 21  -- 9 PM
+    					    
+    How to create a filter type of program ?
+    create a normal java class and implements Filter interface
+    
+        init   -- this method gets executed immediately once server creates an object for this filter program
+        doFilter  -- this method gets executed every time when the request comes to filter program
+        destroy   -- this method gets executed when we stop the server
+    
+    
+    How to configure filter type of program in web.xml ?		     
+		  <filter>
+		      <filter-name>authFilter</filter-name>
+		  	  <filter-class>filters.AuthorizedFilter</filter-class>
+		  </filter>
+		  <filter-mapping>
+		      <filter-name>authFilter</filter-name>
+		  	  <url-pattern>/regSrv</url-pattern>
+		  </filter-mapping>
+    
+    How to map the request from filter to servlet in web.xml ?
+      when we give request with url pattern as /regSrv      
+      First request reaches to filter program and from there we can either map to intended servlet program which gets identified with same url pattern
+       or we can redirect the request
+    
+    How to chain the request from filter to intended servlet program ?
+      chain.doFilter(req,resp)
+    
+    How to redirect the request from filter back to browser ?
+       -- using an object of type as RequestDispatcher 
+    
+    
+  
+  Http Follows Stateless protocol
+    -- when ever we give a request then server will create a new set of request and response obejcts
+    
+     -- By default http maintains data in the request object only till the time its respective response gets delivered to browser
+     
+     Once response gets delivered to browser then immediately respective request and response objects will be destroyed from server
+  
+  
+  ####################################
+  
+  May 22nd -- 2 PM
+  
+  HttpSession 
+  
+    Maintaining data in an application for a Period of time from login to logout is called as a Session
+    
+    req.getSession(true)   --- server will create a new HttpSession object
+    
+    setAttribute(key, value)   -- to set the data into session object
+    
+    getAttribute(key)     -- to get the data from session object
+    
+    req.getSession()    --- will get access to already created HttpSession object
+  
+    sessionObj.invalidate()  -- session object will be destroyed in server
+  
+  
+  Summary of Servlets
+    Standalone Application
+    Web Application
+    HttpServlet
+    javax.servlet
+    tomcat/lib/servlet-api.jar
+    Configuring servlet in web.xml
+    How to give request from browser to servlet java program
+    localhost:8080/appName/urlPattern
+    How to deliver the response from servlet program back to browser
+    Submitting form from browser to servlet
+      action, method attributes
+    How to read the data from request object
+       req.getParameter("nameAttributeOfHtmlElement");
+    Html -- Servlet  -- Jdbc  -- db
+    Servlet Life Cycle
+      object creation
+      init
+      doGET
+      destroy
+    load on startup tag
+    Servlet Chaining
+      forward
+      include
+      sendRedirect
+    Filters
+       chaining the request from filter to intended servlet program
+       redirecting the request from filter back to browser
+     object creation
+     init
+     doFilter
+     destory
+    Stateless Protocol
+    HttpSession object
+    
+    
+  
+  
+  Serialization and Deserialization
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,12 @@
+package com.dependencyCheck;
+
+public class Employee {
+	
+	//id, name, atm, address
+	private long id;
+	private String name;
+	private long atm;
+	private String address;
+	
+
+}

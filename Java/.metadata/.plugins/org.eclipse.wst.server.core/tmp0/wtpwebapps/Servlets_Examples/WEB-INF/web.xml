@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Servlets_Examples</display-name>
+
+
+	<servlet>
+		<servlet-name>Hello</servlet-name>
+		<servlet-class>servletsExamples.HelloWorld</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Hello</servlet-name>
+		<url-pattern>/s1</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>FilterExample</filter-name>
+		<filter-class>servletsExamples.AuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FilterExample</filter-name>
+		<url-pattern>/s1</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>EnterForm</servlet-name>
+		<servlet-class>servletsExamples.RegPageSrv</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EnterForm</servlet-name>
+		<url-pattern>/UserEnterForm</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>chaining.LoginSrv</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/loginform</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>WelcomeScreen</servlet-name>
+		<servlet-class>chaining.WelcomeSrv</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WelcomeScreen</servlet-name>
+		<url-pattern>/welcomescreen</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ErrorSrv</servlet-name>
+		<servlet-class>chaining.ErrorSrv</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ErrorSrv</servlet-name>
+		<url-pattern>/errorSrv</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>client1</servlet-name>
+	<servlet-class>servletsExamples.ClientSrv1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>client1</servlet-name>
+	<url-pattern>/client1form</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>client2</servlet-name>
+	<servlet-class>servletsExamples.ClientSrv2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>client2</servlet-name>
+	<url-pattern>/client2form</url-pattern>
+	</servlet-mapping>
+
+</web-app>

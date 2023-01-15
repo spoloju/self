@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Shravan_ServletExcercise</display-name>
+
+
+	<servlet>
+		<servlet-name>shravan</servlet-name>
+		<servlet-class>shravanpratice.Practice1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shravan</servlet-name>
+		<url-pattern>/shravangetdetails</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RbiBank</servlet-name>
+		<servlet-class>shravanpratice.Rbi</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RbiBank</servlet-name>
+		<url-pattern>/rbi</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>IciciBank</servlet-name>
+		<servlet-class>shravanpratice.Icici</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IciciBank</servlet-name>
+		<url-pattern>/icici</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SbiBank</servlet-name>
+		<servlet-class>shravanpratice.Sbi</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SbiBank</servlet-name>
+		<url-pattern>/sbi</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>employeeinfo</servlet-name>
+		<servlet-class>shravanpratice.EmployeeInformationPull_Assignment1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employeeinfo</servlet-name>
+		<url-pattern>/EmployeeDetails</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

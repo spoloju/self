@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;Spring_Boot/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;Rest_Services&apos;&#x0D;&#x0A;- Destination element: &apos;Spring_Boot/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Rest_Services/src/main/java/com.service&#x0D;&#x0A;     Rest_Services/src/main/java/com.pojo&#x0D;&#x0A;     Rest_Services/src/main/java/com.repository&#x0D;&#x0A;     Rest_Services/src/main/java/com.controller" description="Copy packages" destination="=Spring_Boot/src\/main\/java" element1="/src\/main\/java&lt;com.service" element2="/src\/main\/java&lt;com.pojo" element3="/src\/main\/java&lt;com.repository" element4="/src\/main\/java&lt;com.controller" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1634612673781" version="1.0"/>
+</session>

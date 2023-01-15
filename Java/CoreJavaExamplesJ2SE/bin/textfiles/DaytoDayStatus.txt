@@ -1,0 +1,1271 @@
+
+May 14th ---
+Java is a server side programming language
+
+JVM -- Java Virtual Machine is responsible to execute every java program
+
+JVM starts every java program execution only from main method
+
+System.out.println  -- will print the data where cursor is located and after printing the data 
+						it moves cursor to next line
+
+System.out.print   -- will print the data where cursor is located and leaves the cursor in same line itself
+
+
+Data Types and Variables
+
+ Data Type -- Data Type defines what type of data are we holding through a java variable
+ 
+ Numeric 
+    Integral
+       int   -- through which we hold an integer value at max of 9 digits
+       long  -- through which we hold an integer value at max of 15 digits
+    
+    Decimal
+       float  -- holds an accuracy of only 5 digits after to . point
+       double
+ 
+ Non Numeric
+ 
+   char  -- to hold single character which should be wrapped between ' '
+   String -- to hold group of characters which should be wrapped between " "
+   boolean --- to hold either true or false
+   
+   
+   create a new variable
+     dataType variableName = value
+     
+   update the existing variable
+      variableName = latestValue
+   
+   
+Within a method we should not define more than 1 variable with same name  -- if so they will be considered as duplicate variables which are not allowed
+   
+   
+Methods  ---
+   
+   
+  methodReturnType  methodName(methodArgumentType methodArgumentName){
+        //
+        //
+        //
+        //
+        return   
+   }
+   
+   addTwoNumbers(10, 4.5);
+   
+   addTwoNumbers(int num1, double num2){
+      //
+      //
+      int result = num1 + num2;
+      return result;
+    }
+   
+   
+   methodArgumentType  -- defines what type of data is expected to be passed as input for the method
+   
+   methodReturnType    -- defines what type of data is expected to be returned as an output from the method
+   
+   return  -- return is a predefined keyword through which we return the value as an output from the method
+   
+   
+   void  -- From a method when we are not returning any value as an output then we mention void keyword before to method signature
+   
+   From main method when we wish to call any method directly using its method name 
+      then it should be defined with a keyword called as static
+   
+ Summary :
+    Java introduction
+    JVM
+    main method
+    System.out.println
+    System.out.print
+    Data Types
+    Variables
+    Methods
+   
+   local and global variables
+   
+   local Variables  -- Variables which are defined within a method are called as local variables to that method
+   
+   Global Variables  -- Variables which are defined outside the method are called as global variables of that program
+   	
+   	Global variables can be accessed across all the methods of that class
+   
+   Default values  -- When we define a variable and if we dont initialize the variable then 
+   						 Every variable will be holding certain default value based on the data type of respective variable
+Default value assigned to int data type variable is 0
+Default value assigned to long data type variable is 0
+Default value assigned to float data type variable is 0.0
+Default value assigned to double data type variable is 0.0
+Default value assigned to String data type variable is null
+Default value assigned to boolean data type varibale is false
+Default value assigned to char data type variable is   (single character space)
+   
+   Arrays
+     -- We use the concept of arrays when the requirement is to hold group of values through a single variable
+     -- where each and every individual value will be identified with index position which starts from 0
+     
+     Limitations with Arrays :
+        --> Arrays can hold only homogeneous group of data
+        --> Arrays can hold the data with limit in size
+     
+     
+     
+   Iterative Statements  -- write once and get them executed for multiple times
+   
+      for
+      while
+      do while
+      for each loop
+   
+   
+   Summary :
+      local variables
+      global variables
+      Default Values
+      Arrays
+        homogeneous values    -- 20, 50, 80, 90
+        heterogeneous values  -- 10, 20, 5.3, "java
+        index positions
+        limitations with arrays
+     for
+     while
+     do while
+   
+   Note : IN case of for loop and while loop, condition will be evaulated first during every iteration and based on result of condition evaulation only 
+   			statements within { } gets executed
+   			
+   			But in case of do while loop, during very first iteration, statements within { } will get executed without checking any condition 
+   					and from second iteration onwards statements will get executed after checking condition
+   
+   for each  - When we wish to iterate on the group of values without using index position then we use for each loop
+ 
+ Selective Statements : When we wish to execute the statements within a method based on result of condition evaluation then we use selective statements
+   if else  -- when we wish to evaluate conditions through relating the data then we use if else conditions
+   switch   -- when we wish to execute statements within a  method based on possible values of a variable then we use switch case
+   
+     case  -- is a predefined keyword through which we can mention all possible cases
+     default  -- when the input value is not matching to any of the cases defined then 
+     				the statements present under default block will get executed
+     break -- at the end of every case we mention break keyword so that after executing matched case the following cases are not going to be executed
+
+####################################
+May 15th ---   
+   
+   operators
+   
+     Arithmetic Operators   --> +, -, *,  /, %, ++, --
+     
+     Relational Operators   --> >, <, >=, <=, ==, .equals, !=
+     
+     Logical Operators    --> AND (&&), OR(||)
+     
+     Terinary Operator   --> (condition) ? "" : ""
+   
+   
+  Summary :
+    for each
+    if else
+    switch
+      case
+      default
+      break
+    operators
+     Arithmetic
+     Relational
+     Logical
+   
+
+   Terinary Operator   --> (condition) ? "" : ""
+   
+     When the condition within brackets is true 
+     		then the statement defined beside to ? symbol gets executed
+     When the condition within brackets is false
+     		then the statement defined beside to : symbol gets executed
+     		
+   Note : Using terinary operator, we can execute only 1 statement at a time
+   
+   If we wish to execute multiple statements based on result of condition then we have to use if-else conditions
+   
+   
+   OOPS -----
+   
+   	Encapsulation - Process of wrapping properties and methods as a single unit. (Ex - Class) 
+   
+    What is meant by Class
+      -- Class is defined as a template through which we hold all the properties of a given entity
+    
+    What is meant by an Object for a class
+       -- Object is the memory that gets allocated for all the properties of the class through which we store the data
+    
+    How to create an object for a class
+       ClassName objectName = new ClassName()
+    
+    What is the relation between a class and an object
+      -- Class will always defined as 1 for entity and through taking the class as a reference we can create n no of objects for the class
+    
+    How to store the data in the object
+      -- through using setter methods
+    
+    How to get the data from the object
+      -- through using getter methods
+    
+    Importance of toString method in the class
+      -- When the requirement is to display the information regarding all the properties of an object through a single statement
+        then in the respective class we have to make sure to get toString method defined in that class
+   
+   Note : right click inside the class --> source  --> generate getters and setters
+          right click inside the class --> source  ---> generate toString method
+   
+   Assignment
+     -- Create a class and try to store information reg 4 books
+           display 2 books data using getter methods
+           display 2 books data using toString method
+   
+   Summary :
+      terinary Operator
+       class
+       object
+       relation between class and object
+       setter methods
+       getter methods
+       importance of toString method in the class
+   
+#####################################################################
+   
+constructors
+
+ What is meant by constructor method
+    -- Method defined in a java class whose name is same as class name and no return type defined before to the name of the method 
+    		such methods are called as constructor methods
+ 
+ Default Constructor
+    -- Constructor method which is defined without any method arguments is called as Default Constructor method
+ 
+ Parameterised Constructor
+   -- Constructor method which is defined with method arguments is called as parameterised constructor method
+ 
+ 
+  THese constructor methods will be used during object creation process
+ 
+  What happens when we create an object for a class using default constructor method
+     -- ALl the properties in the object will be initialized with default values based on data type for the properties of the class
+  
+  What happens when we create an object for a class using parameterised constructor method
+     -- All the properties in the object will be initialized with the values we are passing on for the parameterised constructor method of the class
+
+  ClassName objectName = new ClassName();
+  
+   what is the role of new keyword during object creation process
+      -- new keyword is responsible to allocate memory for all the properties of the class within the object
+   
+   What is the role of constructor method during object creation process
+      -- constructor method is responsible to initialize the data in the object
+
+setter methods  -- are used to update the data in the existing objects
+
+static
+
+  What does static keyword represents in java
+    -- static keyword represents common data for all the objects of a class
+  
+  IN a class which properties can be defined with keyword static
+    -- properties of a class which holds same values for all the objects of a class, such properties can be defined with static keyword
+  
+  IN a class which properties should not be defined with keyword static
+    --- properties of a class which holds different values for different objects of a class, such properties should not be defined with static keyword
+  
+  What happens when certain properties of a class are defined with static keyword
+    -- Memory for static properties of a class will be defined only once irrespective of n no of objects we may create for the class
+  
+  What happens when certain properties of a class are not defined with static keyword
+     -- Memory for the non static properties of a class will be allocated every time when we create a new object 
+  
+  How to access static properties or static methods of a class
+    -- either using class name or directly using their names
+  
+*************************
+  How to access non static properties or non static methods of a class
+     -- Through creating an object for a class and using its object name, we can access the non static properties or non static methods of a class
+
+
+
+  As main is static method,
+    so we can access static properties or static methods directly or through class name
+    
+ As main is static method,
+    so we can access the non static properties or non static methods through creating an object for the class 
+  
+When a method can be marked as Static ?
+In a method if you don't use any NON-STATIC variables then method can be marked as Static.
+
+When a method can be marked as Non - Static ?
+In a method if you use any NON-STATIC variables then method shouldn't be marked as Static.  
+
+
+ Summary :
+    constructors
+    static
+
+
+inheritance
+ 
+ What is meant by inheritance
+    -- Process of sharing the properties and methods of 1 class with other class through creating parent and child relationship between classes 
+    		using extends keyword is called as inheritance.
+ 
+ When do we create parent and child relationship between java classes
+    -- When the properties and methods of 1 class are repeated in other class then we create parent and child relationship between the classes.
+ 
+ What we achieve with the concept of inheritance
+   -- CODE REUSABILITY
+
+Note :
+  As per the concept of inheritance, using child class object we can access the parent class properties but not vice versa
+    we cannot access child class methods using parent class object
+     
+
+super
+   
+   super is a predefined keyword in java language through which we can call the parent class constructor method from child class constructor method
+   
+   Why do we write super() 
+      -- In order to initialize the memory for parent class properties in the child class object 
+            we call super() statement in the child class constructor method
+
+Assignment on classes and Objects
+
+ Create a class with name as Book
+     Store the information of 4 books
+	 
+	 For 2 objects 
+	   set the data using setter methods and get the data using getter methods
+	 For 2 objects
+	    set the data using parameterised constructor method and get the data using toString method
+	
+ Create a class with name as Teacher
+   Store the information of 4 teachers
+	 
+	 For 2 objects 
+	   set the data using setter methods and get the data using getter methods
+	 For 2 objects
+	    set the data using parameterised constructor method and get the data using toString method
+	 
+	 Once we create an object for a class
+	  
+	   We can store the data in the object in 2 ways
+	      either through calling setter methods on all the properties of your object
+		        stObj.setRollNo(101);
+				stObj.setName("harsha");
+				stObj.setCourse("java");
+				stObj.setGender('M');
+		  or
+		  through a single statement which is using parameterised constructor method
+		      Student st2 = new Student(101, "harsha", "java", 'M');
+		  
+		  
+	  We can get the data from an object in 2 ways
+	      either through calling getter methods on all the properties of your object
+		      	System.out.println("roll No is "+stObj.getRollNo());
+				System.out.println("Name is "+stObj.getName());
+				System.out.println("Course is "+stObj.getCourse());
+				System.out.println("Gender is "+stObj.getGender());
+		  or
+		  through a single statment which uses toString method of that java class
+		      	System.out.println(st1);
+				
+				
+Assignment on static
+create a class to store information reg 3 teachers who teaches in same institute on different courses
+
+store the information and display the information
+
+
+Assignment on inheritance
+class Bicycle is a base class, class MountainBike is a derived class which extends Bicycle class and class Test is a driver class to run program.
+  store information of Bicyle and MountainBike and display those objects information
+
+Notes on different types on inheritance	supported & not supported in JAVA
+
+Single inheritance - only 2 classes participate in inheritance
+Multilevel inheritance  -- no of classes participate in inheritance but 1 class can have only 1 direct child class
+Hierarchical inheritance  -- no of classes participate in inheritance but no restriction with respect to no of direct child classes
+Multiple inheritance(Supported using interfaces, not by classes)  -- 1 class can have no of direct parent classes
+Hybrid inheritance(Mix of two or more of above inheritance types)	-- combination of hierarchial and multiple is called as hybrid
+
+In java, 1 class extending more than 1 parent class is not supported
+class A extends B,C ----> INVALID
+
+so multiple and hybrid inheritances are not supported in java 
+
+####################################   
+
+May 16th ----
+
+  Polymorphism  --
+   
+    How to identify different methods in a class as duplicate methods 
+       -- Different methods present in class with same method name and same method argument types 
+       				such methods of a class are called as duplciate methods
+       				
+       Note : in the process of identifying 2 methods as duplicate or not, method return type will not be considered
+    
+    Method Overloading
+       -- Different methods present in class whose method names are same but different with respect to method argument types 
+       			such methods are called as overloaded methods
+    
+    Method Overriding
+       -- By default as per the concept of inheritance, all methods from parent class will be inherited to child class
+       
+        But if child class dont want to use the parent class method logic then child class can override the existing logic of parent class 
+        		with new logic -- which is called as method overriding
+        		
+        		
+        		child class overriding the parent class methods based on their own implementation logics
+    
+    Super Class Ref and Sub Class Object Rules
+    RULE 1 -- Parent class variable can be assigned with child class object 
+					 where as child class variable cannot be assigned with parent class object
+					 
+	RULE 2 -- When we assign child class object to parent class variable 
+					 then through parent class variable we can call only the methods present in parent class
+					 
+	RULE 3 -- When we assign child class object to parent class variable
+					 then through parent class variable if we call any overridden method
+		                  then child class overridden logic will get executed
+
+    Polymorphism
+       -- Different methods with same method name but different with respect to implementation logics 
+       				such methods are called as polymorphic methods and this concept is called as polymorphism
+       				    ex : method overloading, method overriding
+    
+      static polymorphism  -- Among the polymorphic methods, through a given statement we can confirmly say which method among 
+      								polymorphic methods is going to execute
+      								  ex : method overloading
+      								  
+      								  static polymorphism or compile time polymorphism or early binding
+      
+      dynamic polymorphism   -- Among the polymorphic methods, through a given statement we cannot confirmly say always this method only will get executed,
+      							it all depends on which class object is assigned to variable during program execution time
+      							     accordingly respective class method will get executed
+      							       ex : method overriding
+   
+   								dynamic polymorphism or runtime polymorphism or late binding
+   
+   AccessSpecifiers   -- these defines scope of accessibility for the properties or methods of a class
+   		private    -- it restricts the scope of accessibility only within that java class
+   		default    -- it restricts the scope of accessibility within that package
+   		protected  -- it restricts the scope of accessibility within that package as well as only child classes of other packages
+   		public     -- no restrictions
+   		
+Note :
+  --> In a class when we define properties or methods without any access specifier 
+  			then we call them as default access specifier properties or default access specifier methods
+  --> When 2 classes are having parent and child relationship then the parent class properties or parent class methods 
+  		can be accessible from child class directly using their names
+  --> When 2 classes dont have any relationship in between then from 1 class if we wish to access the properties or methods 
+  		of other class then we have to create an object for that class 
+  				 and using this object we can access the properties or methods of a class
+  				 
+ -> IN a class when we are referring to any other class present in other packages then we need to import that class to our class 
+ 			through pressing CTRL + SHFT + O
+   
+     
+   
+   final  -- is a predefind keyword in java which says whether a variable or a method cannot be updated or overridden 
+   
+      before to variable name   -- variable value cannot be updated
+      before to method name     -- method cannot be overridden
+      before to class name      -- class cannot be extended by any other child class
+      
+Summary :
+  Polymorphism
+    static polymorphism
+    dynamic polymorphism
+  access specifiers
+  final
+  
+  #####################################################################################
+  
+  May 17th -----  
+  
+   Interfaces
+   
+     methodReturnType methodName(methodArgumentType methodArgumentName){
+        //
+        //
+        //
+     }
+     
+     concrete methods
+        methods that have both method signature and body of the method -- such methods are called as concrete methods
+            int addTwoNumbers(int num1, int num2){
+               int result = num1 + num2;
+               return result;
+            }
+     
+     abstract methods
+        methods that consists of only method signature -- such methods are called as abstract methods
+           double multiplyTwoNumbers(int num1, double num2);
+      
+      Requirement  -- what to do -- abstract methods
+      
+         what is the functionality we wish to perform
+         what type of data is expected to be passed as input for the method
+         what type of data is expected to be returned as output from the method  
+         
+         ***********Note - By Default every method in an interface is public abstract. 
+         ***********Note - By Default every variable in an interface is public static final;
+   
+   Why do we write abstract methods
+     -- Abstract methods represents information regarding requirements of an application
+     
+   Why do we write concrete methods
+     -- Concrete methods represents information regarding implementation for given requirements of an application
+   
+     Requirement  -- what to do  -- abstract methods
+     Implementation  -- How to do  -- concrete methods
+   
+   What is meant by interface ?
+      -- Interface is a special type of program through which we provide the information regarding requirements of an application in terms of abstract methods
+   
+    An interface can hold ONLY abstract methods
+   
+   How to create relationship between a class and an interface ?
+     -- implements 
+     
+ ****
+  What happens when a class implements an interface ?
+     -- Respective class is responsible to provide the implementation for all the abstract methods of an interface
+   
+   When a class implements an interface
+      scenario 1 : class providing implementation for all the abstract methods of an interface       -- Normal java classes
+      scenario 2 : class providing partial implementation for the abstract methods of an interface   -- Abstract classes
+    
+
+================================================================================================================================    
+Assignment - 
+RBI
+ accountNumber
+ accountantName
+ branch
+ loanAmount
+ 
+ calcuateInterest(){
+    -- should provide 5% of loanAmount as interest
+ 
+
+ICICI
+  boolean mobileBankingOption
+  
+  calcuateInterest(){
+     -- should provide 10% of loanAmount as interest
+
+SBI
+  boolean internetBankingOption
+  
+  calcuateInterest() {
+    -- should provide 15% of loanAmount as interest
+================================================================================================================================    						
+***
+ A normal java class consists of only all concrete methods
+ An interface consists of only all abstract methods
+ An abstract java class consists of both concrete methods and abstract methods
+      						
+   
+   Can we create an object for a normal java class
+     -- YES
+   
+   Can we create an object for an interface
+     -- NO
+   
+   Can we create an object for an abstract java class
+      -- NO
+      
+What happens when we create parent and child relationship between normal java class and an abstract java class ?
+   -- Normal java class is responsible to provide the implementation for all the abstract methods of an abstract java class
+   
+#########################################################
+   
+
+   Strings
+   
+   
+   We can define String type of variables in 2 ways
+   
+    without using new keyword
+       -- When we define string type of variables without using new keyword then the memory for the variables will be allocated in SCP memory area
+    
+    with using new keyword 
+       -- When we define String type of variables with using new keyword then the memory for variables will be allocated in Heap memory area
+       
+SCP --- String Constant Pool memory area which is specially designed only to store String type of data
+
+ Behaviour of SCP
+    -- When we define more than 1 string variables with same value then for all the variables, 
+          memory will be allocated only once and this memory will be referred through all the variables
+ 
+ 
+ Behaviour of Heap
+     -- Irrespective of whether the values we are assigning are same or different, 
+         for every newly created variable, we get new memory area allocated
+         
+   
+         
+   Note :
+     When we call == on 2 String type of variables, then JVM will be checking whether 2 variables are pointing to same memory area or different memory areas
+     WHen we call .equals on 2 String type of variables, then JVM will be checking whether the values assigned to variables are same or different
+   
+   ********
+   Imp Point - When we use .equals vs == for new String, result might change irrespective of the value assigned due to memory allocation.
+   ex - 
+		String fname4=new String("Sachin");
+		String fname5=new String("Sachin");
+    System.out.println(fname4.equals(fname5));
+    System.out.println(fname4==fname5);
+   ***************
+   
+   
+   Mutable Memory areas  or Changeable
+      -- With the change in the value of a variable, the value in the respective memory area also will be changed which are called as Mutable memory areas
+      
+  Immutable Memory areas  or UnChangeable
+      -- With the change in the value of a variable, the value in the respective memory area will not be changed instead 
+            for every change we get a new memory area allocated
+            
+     We can programmatically prove Strings are immutable through
+      calling == before we change the value of a variable and after we change the value of a variable       
+            
+            
+            
+    String class Methods
+    
+       ==
+       .equals
+       isEmpty
+       toLowerCase
+       toUpperCase
+       .split
+       .replace
+       .charAt
+       .indexOf
+       .join
+       .concat
+       .substring
+       .trim        
+       .length 
+       
+       
+       ********String Buffer vs String Builder*******
+       
+       When we know we are changing the value of string variable multiple times then we should not use strings concept
+         because for every change a new memory will get allocated
+         
+         So in this case we have to use either StringBuffer or StringBUilder
+         
+         these acts on same object
+         
+         StringBuffer is legacy class and is synchronous
+         StringBuilder is from java 1.5 which is asynchronous
+       
+   ============================================================
+   
+   Assignment 1 
+   
+   Write a java program to display a reverse of a String
+   
+   Write a java program to find out no of words in a given sentence
+   
+   Write a java program to find out whether given string is palendrome (ex - mom is palendrome, cat is not palendrome)
+   
+   Assignment - 2 
+   
+   Write a java program to find out max value among the group of values present in a array
+   
+   Write a java program to give me a avg value in a array
+   ["1", "2", "3"]
+   
+   Write a java program to find out no of occurences of a similar words in a String array 
+   (ex - ["java", "html", "css", "java", "css"]
+   
+   
+   ===============================================================
+            
+   NullPointerException  -- when we call any method on the value null
+   
+   StringIndexOutOfBoundsException  -- when we operate on an invalid index position of string variable
+   
+   
+   
+Summary :
+   SCP
+   Heap
+   ==
+   .equals
+   Mutable
+   Immutable
+   String Class Methods
+   NullPointerException
+   StringIndexOutOfBoundsException
+   
+   
+#######################
+
+May 18th
+
+ Exception Handling
+ 
+    What is meant by an Exception ?
+       -- Abnormal termination or Sudden termination of a java program due to some mistake in the code is called as an Exception
+    
+    What is meant by Exception Handling ?
+       -- Providing an alternate solution when ever some exception occurs at some statement of a java program 
+       		in such a way the program execution terminates smoothly whether an exception occurs or not in try block
+    
+    How do we handle an exception ?
+       -- through using try/catch blocks
+    
+	    try   -- error prone code will be written in try block	    
+	    catch  -- alternate solution to be executed when ever some exception occurs in try block
+	    
+    What information does an exception object carries
+        -- Every exception object carries information regarding 3 properties
+                name of the Exception   -->  java.lang.ArithmeticException
+                description of the Exception  -->  / by zero
+                location of the Exception   --> at exceptionHandling.ExceptionDemo.main(ExceptionDemo.java:9)
+                
+                java.lang.ArithmeticException: / by zero
+	at exceptionHandling.ExceptionDemo.main(ExceptionDemo.java:9)
+    
+    
+    
+    How to display information from exception object
+      printStackTrace  --> will display all above 3 properties of your exception object
+      toString()    --> will display only name and description of exception object
+      getMessaage()  -- will display only description of exception object
+    
+    ANalysing step by step what happens when an exception occurs at some statement of a java program
+      WHen ever some exception occurs at some statement of a java program, 
+        Immediately JVM will create an object for that exception class
+        
+          NOW JVM will check whether the statement through which we get an exception is inside to try block or not
+          
+            case 1 : What happens when the statement is not inside to try block
+            				-- exception occurs and java program execution will be abnormally terminated from that statement itself
+            
+            case 2 : What happens when the statement is inside to try block
+                  NOW JVM will check whether an appropriate catch block is associated to try block or not
+                    case 1 : What happens when an appropriate catch block is not associated
+                              -- java program execution will be abnormally terminated at that statement
+                    
+                    case 2 : What happens when an appropriate catch block is associated
+                          -- respective catch block will be executed and program execution happens smoothly
+    
+     1 try block with multiple catch blocks
+     
+       -->  THough we surround 1 try with multiple catch blocks, 
+         at a time only 1 catch block will get executed based on which exception occurs first in the try block
+       --> Once JVM comes out of try block in search of suitable catch block, then JVM wont re enter into try block again
+  
+
+    Difference between an Exception and an Error
+    
+     Compile time error  -- these occurs during program compilation time due to syntax mistakes
+     
+     Run time error      -- these occurs during program execution time due to lack of system resources     
+        Error is defined as an abnormal termination of a java program due to lack of system resources 
+          ex : OutofMemoryError, StackOverflowError, NoClassDefFoundError etc ...
+     
+     Exception   -- these occurs during program execution time due to mistake in the code
+         ex : ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc ....
+    
+*************
+    Checked Exceptions
+       -- Exceptions which are checked by java compiler whether developer is handling the exceptions or not 
+       		 irrespective of whether an exception occurs or does not occur in a java program
+       		    ex : IOException, FileNotFoundException, SQLException etc ...
+        
+    UnChecked Exceptions
+        -- Exceptions which are not checked by java compiler whether developer is handling them or not
+                 irrespective of whether an exception occurs or does not occur
+                    ex : ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc ....
+    
+    Usage of throws keyword
+       -- When we wish to delegate the exception handling responsibility from 1 method to other method 
+       		then for the respective method declaration we mention throws keyword
+    
+
+    PreDefined Exceptions
+       -- Exceptions which are part of java library are called as predefined exceptions 
+             ex : ArithmeticException, IOException, NullPointerException etc ..
+    
+    UserDefined Exceptions
+      WHat is meant by userDefined Exception
+       -- Exceptions classes which are developed by java developers when JVM is executing a statement successfully
+       			and that statement execution is violating the business rules of an application
+    
+     How to create user Defined Exceptions
+        -- create a normal java class which extends any one of the predefined exception class in library
+             Note : Our newly created user defined exception class will be getting the behavior of either checked or unchecked
+               	     based on the behavior respective class parent possesses.
+    ex : RuntimeException is a predefined java class in library and consists of unchecked exception behavior
+       So now if we create a userdefined exception class which extends RuntimeException
+    		then our class userdefined exception class will be getting the behavior of UnChekced exception
+    		
+    ex : Exception is a predefined java class in library and consists of checked exception behavior
+         So now if we create a userdefined exception class which extends Exception
+    		then our class userdefined exception class will be getting the behavior of Chekced exception
+    
+    
+    Usage of throw keyword
+       -- throw is a predefined keyword in java, through which we communicate to JVM that some userdefined exception has occurred in a java program
+    
+    Difference between throw and throws
+      throw is used to communicate the information regarding user defined exception
+      throws is used to delegate the exception handling responsibility from 1 method to other method
+    
+##########################################
+    
+    
+Jan 28th --
+    
+    finally
+      During exception handling process, 
+          irrespective of whether an exception occurs or does not occur in try block
+              if we wish certain statements to be definitely executed
+                 then we have to write those statements in the finally block
+                 
+      try     -- error prone code will be written in try block
+      
+      catch   -- alternate solution to execute when an exception occurs in try block will be written in catch block
+      
+      throw   -- keyword which will be used to communicate JVM that an user defined exception has occurred in our program
+      
+      throws    -- keyword to delegate the exception handling responsibility from 1 method to other method
+      
+      finally   -- if we wish certain stmts to be definitely executed once JVM enters try block
+      				then we write those statements in the finally block
+      
+      
+      Checked Exceptions
+          -- Exceptions which are checked by java compiler whether developer is handling them or not
+      
+      UnChecked Exceptions
+          -- Irrespective of whether an exception occurs or does not occur
+                  compiler will not be checking whether developer is handling them or not
+      
+      PreDefined Exceptions
+          -- Exception classes which are part of java library 
+      
+      UserDefined Exceptions
+          -- Exception classes which are developed by developers when JVM is executing certain statements successfully but violating the 
+          		business rules of an application 
+   
+   
+Files -------------------
+   
+   All the predefined classes and interfaces related to files concept are present under java.io package
+   
+    File
+    
+       .exists   -- to check whether a file or folder is existed in the given location with given name or not
+       .isFile   -- to check whether the location we are pointing is a file or not
+       .createNewFile  -- to create a new file in the given location
+       .length   -- to find out no of characters we have in the respective file
+       .delete   -- to delete the file in the given location
+       .isDirectory   -- to check whether the location we are pointing is a folder or not
+       .mkDir   -- to create a new folder in the given location
+       
+       .list  -- will return us the names of all items in the given location
+   
+   
+   PrintWriter  -- is a predefined java class through which we write some data to the file (Refer PrintWriterDemo)
+    ( Note  - without File Write Class, - file data will be removed and replaced with new data)
+       -- .println
+       
+       FileWriter -- is a predefined java class through which we write some data by appending to it.  (Refer PrintWriterDemo_2)
+       
+       FileWriter fw= new FileWriter(f1, true); // if we pass input as true then we are appending data to the file existing data.
+       FileWriter fw= new FileWriter(f1, false); // if we pass input as false or No Boolean(default) then we are cleaning up existing data in the file and writing a new data.
+   
+   BufferedReader 
+      .readLine()   -- reads 1 line of data at once
+      
+      and the same method returns output as null when we reach out to end of the file
+      
+      so we should keep on calling readLine() until we get output as null
+      
+      
+         
+############################
+
+Jan 29th 
+
+   MultiThreading
+   
+   
+    What is meant by a Thread
+       -- Single flow of execution is called as a Thread
+    
+    What is meant by single thread model
+       -- Only 1 Thread will be created and that thread will be executing all the methods of different classes one after other 
+       		based on how we call those methods from main method
+    
+    What is meant by multiThreading
+       -- No of threads will be executing parallely at a time and independent to each other is called as MultiThreading
+    
+    Steps to achieve multiThreading
+    
+      STEP 1 : Make the class on which we wish to create a Thread as eligible for multiThreading
+      				way 1 : extends Thread
+      				way 2 : implements Runnable
+      
+      STEP 2 : Create and start a new Thread through calling Thread class start method
+      
+      STEP 3 : Define the starting point for the newly created Thread execution process
+      				with help of run method
+    
+    
+    
+    When to choose extends Thread
+       -- When the requirement is just to make the class as eligible for multiThreading then we use extends Thread class
+    
+    When to choose implements Runnable
+       -- When the requirement is to make the class as eligible for multiThreading as well as 
+             inherit the properties from other class to our class then we use implements Runnable
+   
+----- 
+Jan 30th 
+
+   Thread class Methods
+   
+    Thread.currentThread()  -- will give access to the Thread object which is executing given statement
+    
+      .getName()  -- will get the name for the THread which is executing given statement
+      
+      .setName()  -- through which we can set some new name for the THread which is executing given statement
+      
+      .getPriority()   -- which returns the priority with which respective thread is executing
+      
+      .setPriority()  -- which sets new priority value for the Thread
+      
+      .sleep  -- through which we can stop a thread execution for some time in terms of milliseconds
+      
+      .interrupt   -- through which we can disturb a sleeping thread from its sleep 
+      
+Note : 
+  --> When we call .sleep method then respective thread will be stopping its execution process for some time in terms of milliseconds
+  		and once that time gets finished then respective thread will be back to its execution process
+  --> When we call .interrupt method on the sleeping thread then respective thread will be interrupted from its sleep and it throws InterruptedException
+        and then it will resume its execution process
+  		
+      
+      .join   -- to stop a thread execution till the time other thread execution gets completely finished
+      
+  
+  Difference between sleep and join
+    -- Both sleep and join methods will be used to stop a thread execution for some time 
+    
+      where as 
+      
+        sleep method will be stopping thread execution for some time purely in terms of milliseconds
+        
+        and 
+        
+        join method will be stopping thread execution till the time other thread execution gets completely finished   
+           no matter how long that thread execution might take
+  
+  
+######################################################################
+  
+Feb 1st ----
+  
+     synchronized
+         -- Even in the multiThreading environment, when we wish certain method to be executed through 1 thread after another thread
+         			then we have to mention synchronized keyword before to that method signature
+         			
+         			
+         WHen multiple threads are trying to execute synchronized method then only 1 thread will be given chance to execute synchronized method 
+         at a time and once that thread finishes of execution of that method then only other thread will be given chance to execute same synchronized method   
+   
+   
+     Thread Life Cycle States
+        -- Different states of a Thread from its birth of thread object till destruction of thread object
+        
+        Newly Born State
+           -- WHen we call Thread class start method a new Thread will be created which is called as Newly Born State
+        
+        Runnable State
+          -- Every newly created Thread will be waiting for ThreadSCheduler in order to get the memory allocated 
+          		which is called as Runnable State
+        
+        Running State
+           -- Once THreadscheduler allocates memory for the thread then respective Thread will be starting its execution process from run method
+           		which is called as Running state
+        
+        Waiting State
+           -- Through calling sleep or join methods we can stop a thread execution process for some time which is called as waiting state
+        
+        Dead State
+           -- Once a thread finishes of its execution process then we call it as dead state
+           
+Note : 
+  --> A thread comming out of waiting state, needs to go through runnable state again and has to wait for ThreadScheduler to get the memory allocated
+      and once threadScheduler allocates the memory then respective Thread will be continuing its execution process
+     
+     Referenced Objects
+       -- Objects which got memory allocated and are referred through some variables,
+       		such are called as referenced objects
+     
+     UnReferenced Objects
+        -- Objects which got memory allocated but are not referred through any variables
+        			such are called as UnReferenced Objects
+     
+     Garbage Collection
+        -- Process of destroying or unallocating memory for unreferenced objects of a class
+        			is called as Garbage Collection
+     
+     Daemon Threads
+        -- At the background of every java program execution, we will be having group of threads executed 
+        			which are called as Daemon Threads
+     
+     Finalizer
+        -- Finalizer is the name of 1 Thread which is part of Daemon Threads whose job is to perform Garbage Collection
+     
+     finalize 
+        -- is a predefined method which will be executed as part of Garbage Collection process through Finalizer thread
+     
+     
+     
+     Difference between final, finally, finalize and Finalizer
+     
+       final
+         -- predefined keyword which says a variable or a method cannot be updated or overridden
+         
+       finally
+         -- predefined block which will be executed irrespective of whether an exception occurs or does not occur during exception handling process
+         
+      finalize
+         -- -- is a predefined method which will be executed as part of Garbage Collection process through Finalizer thread
+         
+      Finalizer
+        -- Finalizer is the name of 1 Thread which is part of Daemon Threads whose job is to perform Garbage Collection
+   
+######################################################
+
+Feb 2nd ---
+
+Collections ********************************
+   
+   When the requirement is to hold either homogeneous group of data or heterogeneous group of data without any limit in size 
+   
+      then we use the concept of collections
+      
+      
+      All the predefined classes and interfaces related to collections concept are present under java.util package which is called as Collection Framework
+   
+   
+How to work with Collections 
+
+    .add       -- to add 1 value to the existing collection variable
+    .iterator   -- is to iterate among group of values present in the collection variable
+       .hasNext   -- is to check whether do we have any value in the next position or not during iteration process
+       .next      -- is to get the data from the next position of collection object during iteration process
+    .addAll    -- to add group of values to the existing collection variable
+    .get       -- to get 1 value from the collection variable at mentioned index position
+    .contains  -- to check whether a specific value is present in the collection or not
+    .containsAll  -- to check whether group of values are present in the collection or not
+    .remove    -- to remove 1 value from the collection variable
+    .removeAll   -- to remove group of values from the collection object
+    .retainAll   -- to retain only mentioned group of values from the collection and remove rest of the values from the collection
+    .size        -- to find out no of values we have in the collection variable
+   
+		list ==> Arraylist,LinkedList
+		Set ===> HashSet,LinkedHashSet,TreeSet 
+		Map ===> HashMap,LinkedHashMap,TreeMap
+   
+   
+   List (I)
+      -- ArrayList (C)
+      -- LinkedList (C)
+   
+    We choose List type of collection when the requirement is 
+         --> to hold the data with including duplicate values as well
+         --> List type of collections stores the data in terms of insertion order
+         
+ Note :
+	Output wise both ArrayList and LinkedList gives same output
+	  --> When the frequent operation we are performing on the group of data is data retrieval
+	       then ArrayList gives better performance compared to other collections
+	  --> When the frequent operation we are performing on the group of data is either inserting the data or 
+	  		removing the data from the collection then LinkedList gives better performance compared to other collections
+   
+   ########################################################
+   
+Feb 3rd --
+
+When the requirement is to hold group of values through removing duplicate values from the collection variable then we use Set type of collection
+
+   Set (I)
+      -- HashSet (C)    -- stores the data without following any order
+      -- LinkedHashSet (C)  -- stores the data with following insertion order
+      -- TreeSet (C)   -- stores the data with following sorting order
+   
+   Note :
+     By default, TreeSet sorts all numbers with respect to ascending order
+     By default, TreeSet sorts all strings with respect to alphabetical order
+     
+     What if we wish to customize the default sorting order
+        -- Create a class which implements Comparator interface
+        
+    Comparator is a predefined interface which will be used to customize the default sorting logic of TreeSet
+    Comparable is a predefined interface to let Treeset to know with respect to which property of a class does the objects of a class should get sorted out
+   
+   
+###############################
+   
+Feb 6th ----
+   
+   Map (I)  -- when we wish to store the data in terms of key and value pairs then we use Map type of collections
+      -- HashMap (C)  -- stores the data without following any order
+      -- LinkedHashMap (C)  -- stores the data with following insertion order
+      -- TreeMap (C)  -- stores the data with following sorting order of keys -- so keys in TreeMap should be homogeneous only
+   
+     --> We store data in terms of pair wise
+     --> we use .put method to store the data in the map
+     --> .put(key, value)  
+     --> Each key, value pair is called as an Entry
+     --> Keys should not be duplicated in the map, if so then the latest entry will be overiding the existing entry of the collection
+     --> Values can happily be duplicated
+     --> Keys can be heterogenous
+     --> Values can be heterogeneous
+     
+     Every entry in a map is unique with respect to its key
+   
+   
+   Summary :
+     Basics
+     OOPS
+     Exception Handling
+     FILE IO
+     MultiTHreading
+     COllections
+     
+     
+     java 8 features
+       --> Functional Interfaces
+       --> default and static methods
+       --> lambda expressions   --> Functional INterfaces can be implemented through lambda expressions
+               ex to implement Functional Interfaces
+                   Runnable  -- run
+                   Comparator -- compare
+                   Comparable  --  public int compareTo(T o);
+                   
+                  
+       --> Streams
+              .filter
+              .map
+              .forEach
+              .sorted
+              .count
+              .min
+              .max
+              .findFirst
+              .findAny
+       --> :: operator
+                 for constructor reference
+                 for method reference
+                 
+                 
+     
+Feb 8th --
+
+  Functional Interface : Interface that consists of only 1 abstract method , such types of interfaces are called as Functional Interfaces
+   
+     @FunctionalInterface  --> which is optional
+     
+ Default and static methods  -- are allowed to be written in an interface from java 8
+   
+   Lambda expressions  -- is the easiest way to provide implementation for abstract method of Functional INterface
+   
+   FUnctional INterfaces can be implemented through lambda expressions
+   
+   
+Feb 10th --
+
+  Stream API
+  
+    Collections  -- to store group of data
+    
+    Streams  -- to process the data present under collection object
+    
+    marks.stream().filter(num -> num>=40).collect(Collectors.toSet());
+    
+     marks  --> existing input collection object
+     .stream()  ---> will give access of Stream object on the existing collection 
+     .filter()   --> filter function in streams expect a condition  -- and the records satisfying the condition will be returned or will be filtered out
+     .collect()   --> to collect the filtered output from .filter method
+     Collectors.toSet()  ---> Hold all the filtered output into Set type of collection
+     
+   
+   
+      .filter   -- to filter out few objects or values from the input based on conditional basis
+      
+      .map   -- for every object of collection, we wish to perform some action and return the updated data 
+      
+      .sorted  -- to sort the data in the collection object using streams
+      
+      .count   -- to count the filtered output from collection
+      
+      .limit   -- to give me data based on limit as per requirement (top 3)
+      
+      .min     -- to find the minimum value in the collection
+      
+      .max    -- to find the maximum value in the collection
+      
+      .findFirst  -- will return first value from the collection
+      
+      .findAny   -- will return any 1 value from the collection using streams
+      
+      .forEach  -- we can iterate on group of values in collection and we can do action on every element of collection
+      
+      .toArray  -- to convert data of stream into an array variable
+      
+        colObj.stream().toArray()  --> data gets converted from collection to Array
+        Stream.of(arrayVariable)   --> data gets converted from array to stream
+        
+        Stream.of(arrayVariable).collect(Collectors.toList())  --> data gets converted from array to stream and then from stream to collection
+   
+   
+   :: operator  --> method ref, constructor ref
+   
+ 
+   
+   Basics
+   OOPS
+   Exception Handling
+   FILE IO
+   MultiThreading
+   Collections
+   java 8
+   
+   concurrent collections
+   executor framework
+   
+   
+   sql
+   jdbc
+   servlets
+   spring
+      core
+      jdbc
+      jms
+      rest web services
+      boot
+   hibernate
+   
+   
+   
+   

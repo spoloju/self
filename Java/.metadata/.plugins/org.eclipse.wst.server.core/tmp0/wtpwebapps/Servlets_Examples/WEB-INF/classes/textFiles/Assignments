@@ -1,0 +1,13 @@
+Develop a servlet program in such a way it should accept emplId as input and delivers complete employee information to browser
+use only servlet program to write jdbc logic also don't write any other java  class
+
+
+Develop a  web page which should have 1 text  box to take employee id and hit submit button to trigger servlet
+
+
+
+Develop web page  -- Bank.html
+Develop 3 Servlets -- RBI, ICICI, SBI
+If input in the request is ICICI then execute RBI + ICICI with include
+else if input in the request is SBI then execute RBI + SBI with forward
+else just deliver the response from RBI class

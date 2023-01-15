@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean class="com.dependencyCheck.AtmClient" id="atm">
+	</bean>
+	<bean class="com.dependencyCheck.Address" id="ad">
+		<property name="city" value="hyderabad"></property>
+		<property name="zipCode" value="455454"></property>
+		<property name="state" value="Telangana"></property>
+	</bean>
+	<bean class="com.dependencyCheck.Employee" id="emp">
+		<property name="id" value="777"></property>
+		<property name="name" value="shravan"></property>
+		<property name="atm" ref="atm"></property>
+		<property name="address" ref="ad"></property>
+	</bean>
+	<bean class="com.dependencyCheck.Employee" id="emp2" dependency-check="simple">
+		<property name="id" value="888"></property>
+		<property name="name" value="Kumar"></property>
+	</bean>
+	<bean class="com.dependencyCheck.Employee" id="emp3" dependency-check="objects">
+		<property name="atm" ref="atm"></property>
+		<property name="address" ref="ad"></property>
+	</bean>
+	<bean class="com.dependencyCheck.Employee" id="emp4"  dependency-check="all">
+		<property name="id" value="999"></property>
+		<property name="name" value="kalyan"></property>
+		<property name="atm" ref="atm"></property>
+		<property name="address" ref="ad"></property>
+	</bean>	
+</beans>

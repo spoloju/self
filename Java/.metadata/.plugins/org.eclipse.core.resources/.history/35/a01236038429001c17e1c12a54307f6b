@@ -1,0 +1,9 @@
+package com.dependencyCheck;
+
+public class Address {
+
+	private String city;
+	private long zipCode;
+	private String state;
+	
+}

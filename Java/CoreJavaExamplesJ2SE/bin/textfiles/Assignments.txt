@@ -1,0 +1,34 @@
+
+Assignment - 1 
+
+Write a java program in such a way three threads should be 
+executing three methods of three different classes parallel at a time and independent to each other.
+
+Make One class extends thread make another class implements runnable.
+
+
+
+Assignment - 2 
+
+Write a java program to create 3 threads to execute three methods of three classes 
+display name of the threads along with their priorities 
+
+Note - Start all the 3 threads from one in the loop and execute  in parallel till one hundred and 
+after 100 stop the 3rd thread for 4000 milliseconds 
+after 100 call join method on 3rd thread from 2nd thread.  
+
+---fyi, all 3 threads should be executing for 300 times. 
+
+
+Assignment 3 - Create a class with the name as Course and update the variable with 5 different objects. 
+Perform garbage collection. Display the information of 4 unreferenced obj's through finalize method. 
+
+
+
+Assignment 4 - Collections 
+
+Write a java program to hold the information of 5 students and sort the students with the names in the alphabetical order. 
+Write a java program to count the occurrences of alphabets in a word. 
+Write a java program to hold the information of 5 players with their score and display the information of top 3 scored players.
+Write a java program to hold the information of courses with their fee in a map and display them in the descending order of fee.
+

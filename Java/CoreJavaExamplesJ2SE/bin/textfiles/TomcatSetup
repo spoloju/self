@@ -1,0 +1,202 @@
+create new variable in environment variables --> JRE_HOME -- C:\Program Files\Java\jre8
+   create new variable in environment variables --> TOMAT_HOME -- C:\Program Files\apache-tomcat-8.5\bin
+   update path with tomcat_home in env variables ->  (these 3 steps will solve if tomcat opens and closes)
+
+   
+   
+   
+   Coverage -
+   
+   j2EE Coverage - 
+   
+   SQL - Basics, Order by, Group by, Having , Joins(Inner Join, Left, Right, Self),
+    Subinquires(Single, Multirow, MultiColumn, CoreRelatedSubQuery), Union, UnionAll, 
+    Intersect, Minus, Case, Rank, PartionBy, Constraints, PrimaryKey, ForeignKey
+  
+  	JDBC Concepts
+  	Servlets
+  	Spring - Core,JDBC,JMS,RestWebServices,Boot
+  	Hibernate, JPA
+  	JUNIT, Mockito
+  	//Mutation 
+  	GIT
+  	
+  	
+  	--- 
+  	SOAP XML - 
+  	Kafka - Optional 
+  	MongoDB - 
+  	Microservices - 
+  	 
+  	 
+  	   Username - system
+  password - Batmanjava77$
+  hostname - localhost
+  port - 1522
+  sid-batman
+  
+
+***************** Create New User and use this info to create a DB Connection ****************
+  
+alter session set "_oracle_script"=true;
+
+create user shravan Identified by shravan container=all;
+
+grant sysdba to shravan container=all;
+
+grant all PRIVILEGES to shravan;
+  
+  *****************************************************************************
+  
+  
+  
+  create table emp(
+    emplId int(5),
+    emplName varchar(20),
+    salary int(5),
+    bonus int(4)
+);
+
+select * from emp;
+
+insert into emp values(10, 'harsha', 8000, 800);
+insert into emp values(20, 'harika', 8500, 850);
+insert into emp values(15, 'vishnu', 7560, 756);
+insert into emp values(25, 'goldie', 8500, 850);
+
+insert into emp (emplId, emplName) values(22, 'babu');
+
+update emp set salary = 7400 , bonus = 740 where emplId = 22;
+
+delete from emp where emplId = 22;
+
+select * from emp;
+
+select * from emp order by emplName;
+select * from emp order by emplName desc;
+
+select * from emp order by emplId;
+select * from emp order by emplId desc;
+
+select * from emp where (salary > 8000 and bonus > 800);
+select * from emp where (salary > 8000 or bonus > 750);
+
+select * from emp where emplName = 'harsha';
+
+select * from emp where emplName in ('harsha', 'goldie');
+
+select * from emp where emplName like 'h%';
+select * from emp where emplName like '%u';
+
+insert into emp(emplId, emplName, salary) values(32, 'shivam', 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Demo 
+
+/* Create a table with name emp id with Empid, Name,Salary,Bonus */
+
+
+Create Table Emp_Tab 
+(
+Empid NUMBER(10),
+EmpName VARCHAR2(30),
+Salary NUMBER(10),
+Bonus NUMBER(10)
+)
+
+
+insert into emp_tab values (12345, 'shravan', 5000, 1000);
+insert into emp_tab values (23456, 'Kumar', 6000, 1000);
+insert into emp_tab values (34567, 'Babu', 7000, 1000);
+insert into emp_tab values (3476, 'Harish', 12000, 2000, null, null);
+insert into emp_tab (empid, empname) VALUES (7894, 'Kiran');
+ALTER TABLE emp_tab ADD DeptId NUMBER(10);
+ALTER TABLE emp_tab ADD ManagerID NUMBER(10);
+update emp_tab set salary=7500 where empid='7894';
+delete emp_tab where empid='7894';
+select * from emp_tab where salary=5000;
+select * from emp_tab where salary in(5000,7000);
+select * from emp_tab where salary between 5000 and 7000;
+select * from emp_tab where salary <> 7000;
+select * from emp_tab where salary > 5000 and bonus >500;
+select * from emp_tab where salary is null;
+select * from emp_tab where salary is not null;
+select * from emp_tab order by empid;
+select * from emp_tab order by empid desc;
+select * from emp_tab order by empname;
+
+update emp_tab set deptid=503 where empid in (7894);
+
+--Aggregate Functions 
+Select count(*) sds from emp_tab;
+select sum(salary) sum from emp_tab;
+select avg(salary) avg from emp_tab;
+select min(salary) min from emp_tab;
+Select deptid, count(*) count from emp_tab group by deptid having count(*)>1;
+Select salary, count(*) count from emp_tab group by salary having avg(salary)>5000;
+
+select * from emp_tab where salary >(select salary from emp_tab where empname='Kumar');
+
+-- retrieve the info all employees who are earning max salary in their dept's
+select * from emp_tab where salary in (5000, 7000, 10000);
+select * from emp_tab where salary in (select max(salary) from emp_tab group by deptId);
+
+select * from emp_tab where (deptid, salary) in ( select deptid, max(salary) from emp_tab group by deptId);
+
+-- Correlated SubQueries - Pull the information regarding the employees who are earning salaries > their manager salary
+
+select * from emp_tab e1 where e1.salary>(select m1.salary from emp_tab m1 where e1.managerId=m1.empid);
+
+
+Create Table Department 
+(
+
+DepartmentID Number(10),
+DepartmentName Varchar2(30),
+Location Varchar2(100)
+);
+
+
+Insert into department values(501, 'Java', 'Zoom');
+Insert into department values(502, 'FullStack', 'Skype');
+Insert into department values(503, 'JavaScript', 'Hangouts');
+Insert into department values(504, 'Python', 'Whatsapp');
+
+select * from emp_tab;
+select * from department;
+
+select * from emp_tab join department on emp_tab.deptid = department.departmentid;
+select * from emp_tab left join department on emp_tab.deptid = department.departmentid;
+select * from emp_tab right join department on emp_tab.deptid = department.departmentid;
+select * from emp_tab e1, emp_tab e2 where e1.managerid=e2.empid and e1.empname='shravan'; -- this is self join
+
+
+
+maven (3.6.3) -- download and install
+  -- https://mkyong.com/maven/how-to-install-maven-in-windows/
+  -- mvn -version (type in command prompt to check what version of maven is installed)
+  -- update MAVEN_HOME in environment variables
+
+
+
+
+  

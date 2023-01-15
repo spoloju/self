@@ -1,0 +1,219 @@
+
+Hibernate is an ORM tool
+
+ORM   -- Object Relational Mapping tool
+
+  Data for all the properties of an object will be mapped to various columns of a table
+  
+  
+  When we are working with hibernate we need to maintain 2 xml files
+  
+    1 --- hibernate.cfg.xml
+    
+    2 --- entity.hbm.xml
+    
+    
+ In hibernate.cfg.xml  file  -- we need to configure all database configurations
+ 
+ In entity.hbm.xml  file  ---   we need to provide mapping in between java class properties and data base table column names
+ 
+ 
+ configObj.configure()    --- predefined method through which we can load hibernate.cfg.xml file 
+ 
+ during which object relational mapping happens
+ 
+ 
+ Each connection in hibernate terminology we call it as Session
+ 
+ Hibernate maintains group of connections at once which is called as Session Factory
+ 
+ 
+ When we are making any changes to data in database table then we need to use transactions
+ 
+ on calling tx.commit() all the changes will be permanently stored in database table
+ 
+ 
+ 
+ 
+   Session class Methods
+   
+     .save  --- to insert a record into table
+     .get   --- to retrieve a record from table
+     .update -- to update record in table
+     .delete -- to delete record in table
+     
+     
+     Difference between .get and .load in hibernate session
+         .get   -- will perform early loading
+          					which means irrespective of whether we use the object or not  when we call .get method internally it executes
+          							select query and pulls the data back to java application
+          	-- In case of session get method when record does not exist then we get output as null
+          							
+         .load  -- will perform lazy loading
+         					which means when we call .load method it wont execute query, instead when we are try to use the object
+         							thats when select query will be executed on database table and get the data collected 
+            -- In case of session load method when record does not exist then we get output as ObjectNotFoundException
+         		
+         		#############################
+     
+     .save, .persist, .saveOrUpdate
+     
+       .save   -- to insert a record and return the value through which record in the table will get uniquely identified
+       .persist  -- to insert a record in the table and wont return any value as an output
+       .saveOrUpdate  -- first it fires select query 
+       							based on result of select query 
+       									it checks whether record is existed in table or not
+       											when record is present then it gets updated
+       											when record is not present then a new record gets inserted into table
+     
+     
+ Different states of java class object in hibernate
+ 
+   Transient State  -- when java class object is neither present in hibernate session nor present in database table then 
+   							we call object as in transient state
+   Persistent State   -- when java class object is present in hibernate session and present in database table as well then 
+   							we call object as in persistent state
+   Detached State     -- when java class object is not present in hibernate session but present in database table then 
+   							we call object as in detached state
+   
+       .update, .merge
+       
+         .update method in session will try to take the object into session and ensure these changes in session object gets reflected on database table
+         		if suppose there is no object present in hibernate session with same identifier then successfully object gets updated in database table
+         		if suppose there is an object present in hibernate session with same identifier then we get an exception saying as NonUniqueObjectException
+         		
+         .merge method is also used to update the record in table
+         		if suppose there is no object present in hibernate session with same identifier then successfully object will be moved into session 
+         					and then from session to database table changes gets reflected
+         		if suppose there is an object present in hibernate session with same identifier then instead of trying to move this object into session 
+         				only the changes will be merged into the object present in session and then changes will be reflected on to database table  from session
+   
+   
+ .contains    -- to check whether object is present in session or not (it returns boolean output)
+ .evict       -- to remove a specific object out of session but not from database table
+ .clear       -- to remove all the objects from session but not from database table
+ 
+   Summary :
+       Hibernate Introduction
+       ORM tool
+       hibernate.cfg.xml
+       entity.hbm.xml
+       main method to start hibernate application
+       hibernate session methods
+       .save
+       .update
+       .delete
+       .get
+       
+       diff between .get and .load
+       lazy loading or late binding
+       early loading or early binding
+       
+       diff between .save, .persist  and .saveOrUpdate
+       
+       diff between .update and .merge 
+       
+       transient state
+       persistent state
+       detached state
+       
+       .evict
+       .clear
+       .contains
+       
+ 
+May 30th ----
+
+ Primary Level Cache   -- By default hibernate maintains primary level of cache in the process of pulling the data from table
+ Secondary Level Cache   -- we do can add the secondary level cache as additional configuration
+ 
+ 
+ has-A relationship
+ 
+   <component name="address" class="com.abc.Address">
+   
+   </component>
+ 
+ 
+ is-A relationship
+    SingleTable   - all parent and child classes data will be stored in single table 
+    					where discriminator column will be defined in the table through which we discriminate which record in the table is 
+    							belonging to which entity    
+    
+    tablePerConcreteClass  -- creating tables in the number based on how many no of entities do we have
+    
+    tablePerSubClass   -- creating tables in number based on how many no of entities do we have 
+    		but we create relation between parent and child tables through using key column
+    
+    
+#########################
+    
+May 30th ---
+    
+ HQL    -- Hibernate Query Language
+ 
+ Writing queries with respect to java class name and java class properties names
+ 
+ 
+session.get(Student.class, 101)   -- select * from st_tab where id = 101; 
+ 
+ 
+ Projections    --- if we wish to mention specific columns in the query then we go for the concept of Projections
+ 
+ Restrictions   --- to add more conditions for the existing query
+ 
+ Criteria   -- We use criteria object in the process of using Projections and Restrictions in hibernate
+ 
+ Criterion    -- Each condition we write will be considered as Criterion
+ 
+ 
+##################################
+
+May 31st -- 1 30 PM
+ 
+ 
+ Associations    -- How the data of 1 table is associated to data of other table
+ 
+     onetoOne
+         1 Employee record associated to 1 record of Employee Pan table
+         
+     oneToMany
+        1 record in Cart table getting associated to many records present in Item table
+        
+        
+     manyToOne
+       Many records present in Student table getting associated to 1 record present in Address table
+       
+       
+     manyToMany
+         Many Students getting registered for many courses
+         
+            1 Student registered for many courses
+            1 Course registered by many Students
+            
+             so we create 3 tables
+                
+                table 1  -- to carry information regarding students
+                table 2  -- to carry information regarding courses
+                table 3  -- to carry information regarding relation between students and courses
+     
+     
+ Starting usage of annotations
+ 
+     is-A and has-A with annotations
+     
+     associations concept with annotations
+  
+ 
+May 31st --- 8 30 PM
+
+    is-A
+       single table with annotations
+       table per concrete class with annotations
+       table per sub class with annotations
+       
+   associations
+        one to one
+        one to many  
+        many to one
+        many to many

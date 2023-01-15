@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="EmplSrvImplTest" project="Spring_Boot" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.app.service.test.EmplSrvImplTest" time="0.755">
+    <testcase name="m1" classname="com.app.service.test.EmplSrvImplTest" time="0.739"/>
+    <testcase name="insertEmployeeTestForSuccess" classname="com.app.service.test.EmplSrvImplTest" time="0.014"/>
+    <testcase name="insertEmployeeTestForError" classname="com.app.service.test.EmplSrvImplTest" time="0.001"/>
+  </testsuite>
+</testrun>

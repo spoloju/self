@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1522:batman</property>
+		<property name="hibernate.connection.username">shravan</property>
+		<property name="hibernate.connection.password">shravan</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.connection.pool_size">16</property>
+		<property name="hibernate.hbm2ddl.auto">update</property> 
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<mapping class="com.session.Address"></mapping>		
+<!-- 		<mapping class="com.isA.singletable.Employee"></mapping>		
+		<mapping class="com.isA.singletable.RegularEmployee"></mapping>
+		<mapping class="com.isA.singletable.ContractEmployee"></mapping> -->
+<!-- 		<mapping class="com.isA.tableperclass.Employee"></mapping>		
+		<mapping class="com.isA.tableperclass.RegularEmployee"></mapping>
+		<mapping class="com.isA.tableperclass.ContractEmployee"></mapping>	 -->	
+<!-- 		<mapping class="com.isA.tablerpersubclass.Employee"></mapping>		
+		<mapping class="com.isA.tablerpersubclass.RegularEmployee"></mapping>
+		<mapping class="com.isA.tablerpersubclass.ContractEmployee"></mapping> -->
+<!-- 		<mapping class="com.association.onetoone.Employee"></mapping>
+		<mapping class="com.association.onetoone.EmployeePan"></mapping> -->
+<!-- 		<mapping class="com.association.onetomany.Cart"></mapping>
+		<mapping class="com.association.onetomany.Item"></mapping> -->
+<!-- 		<mapping class="com.association.manytoone.Address"></mapping>
+		<mapping class="com.association.manytoone.Student"></mapping> -->
+<!-- 		<mapping class="com.association.manytomany.Course"></mapping>
+		<mapping class="com.association.manytomany.Student"></mapping> -->
+		</session-factory>
+</hibernate-configuration>		

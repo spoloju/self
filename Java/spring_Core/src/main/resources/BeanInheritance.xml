@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd	
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean class="com.beanInheritance.RegularEmployee" id="emp" parent="emp2" >
+		<property name="salary" value ="1000" ></property>
+		<property name="bonus" value ="500"></property>	
+	</bean>
+	
+	<bean class="com.beanInheritance.Employee" id="emp2">
+		<property name="employeeId" value="35945" ></property>
+		<property name="name" value="Kumar"></property>		
+		<property name="gender" value="male" ></property>
+	</bean>
+	
+</beans>

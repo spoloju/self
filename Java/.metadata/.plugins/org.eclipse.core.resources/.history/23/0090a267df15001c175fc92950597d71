@@ -1,0 +1,24 @@
+package assignments;
+
+public class CallingBookData {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		BooksData bdobj =new BooksData("GameOfThrones", "George R. R. Martin", 3.51, "Amazon", "Kindle");
+		System.out.println(bdobj);
+		System.out.println();
+		BooksData bdobj2 =new BooksData("GameOfThrones", "George R. R. Martin", 3.79, "Amazon", "AudioBook");
+		System.out.println(bdobj2);
+		System.out.println();
+		BooksData bdobj3 =new BooksData("GameOfThrones", "George R. R. Martin", 3.79, "Amazon", "AudioBook");
+		//BooksData bdobj3 =new BooksData(); if class has constructor you can skip the variables.  
+		System.out.println(bdobj3.getBookName());
+		
+		System.out.println();
+		BooksData bdobj4 =new BooksData("GameOfThrones", "George R. R. Martin", 3.79, "Amazon", "AudioBook");
+		System.out.println(bdobj4);
+		
+	}
+
+}

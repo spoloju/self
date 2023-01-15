@@ -1,0 +1,81 @@
+SOAP web services:
+1) SOAP stands for Simple Object Access Protocol.
+2) XML based protocol
+3) Language and platform independent.
+
+
+  
+REST web services:
+REST is a architectureal style not a protocol
+
+Note: RESTful web services maintain versions like 'V1' to denote the current API version.
+
+
+Java web services
+
+What is SOAP?
+
+SOAP (Simple Object Access Protocol) is a transport protocol for sending and receiving requests and responses on XML format, which can be used on top of transport protocols such as HTTP, SMTP, UDP, etc
+
+What is REST?
+REST (REpresentational State Transfer) is an architectural style by which data can be transmitted over transport protocol such as HTTP(S).
+
+
+What is the difference between a REST web service and a SOAP web service?
+
+Below are the main differences between REST and SOAP web service
+	REST supports different formats like text, JSON and XML; SOAP only supports XML;
+	REST works only over HTTP(S) on a transport layer; SOAP can be used different protocols on a transport layer;
+	REST works with resources, each unique URL is some representation of a resource; SOAP works with operations, which implement some business logic through different interfaces;
+	SOAP based reads can’t be cached, for SOAP need to provide caching; REST based reads can be cached;
+	SOAP supports SSL security and WS-security(Web Service-security); REST only supports SSL security;
+	SOAP supports ACID (Atomicity, Consistency, Isolation, Durability); REST supports transactions, but it is neither ACID compliant nor can provide two phase commit.
+
+
+
+How  to decide which one of web service to use REST or SOAP? 
+
+“REST vs SOAP” we can rephrased to "Simplicity vs Standard". Of course, "Simplicity" with REST at most cases wins, it wins in performance, scalability and support for multiple data formats, but SOAP is favored where service requires comprehensive support for security (WS-security)
+
+
+What is WSDL?
+
+WSDL (Web Services Description Language) is an XML format for describing web services and how to access them. 
+
+
+What is JAX-WS?
+
+JAX-WS (Java API for XML Web Services) is a set of APIs for creating web services in XML format.
+
+
+What is JAXB?
+
+JAXB (Java Architecture for XML Binding) is a Java standard that defines how Java objects are converted from and to XML. It makes reading and writing of XML via Java relatively easy.
+
+
+What is a SOAP envelope element?
+
+
+SOAP envelop element is the root element of a SOAP message which defines the XML document as a SOAP message.
+An example:
+<?xml version="1.0"?>
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2001/12/soap-envelope"
+soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+  ...
+  Message information
+  ...
+</soap:Envelope>
+
+
+What is the difference between SOAP and other remote access techniques?
+
+	SOAP is simple to use and it is non - symmetrical unlike DCOM or CORBA is highly popular and usually have complexity in them.
+	SOAP provides greater platform independent with the language independence unlike DCOM or CORBA doesn't provide any of these.
+	SOAP uses HTTP as its transport protocol and the data are being saved in XML format that can be ready by human, whereas DCOM or CORBA have their own binary formats that are used to transport the data in complicated manner.
+SOAP identify the object other than URL endpoint. SOAP objects are stateless and it is hard to maintain that. Whereas, it is not hard to maintain in case of other remote access techniques.
+
+
+ 
+
+ 
