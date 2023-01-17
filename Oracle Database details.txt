@@ -1,0 +1,26 @@
+  Username - system
+  password - shravan1
+  hostname - localhost
+  port - 1522
+  sid-batman
+  
+DB userlist -
+
+Username - shravan
+pwd - shravan1
+
+Username - kumar
+pwd - kumar1
+  
+  -- Command to create the Schema/user
+alter session set "_ORACLE_SCRIPT"=true;  
+
+CREATE USER KUMAR IDENTIFIED BY kumar;
+
+-- Command to Grant the privilege to schema user
+GRANT ALL PRIVILEGES TO KUMAR;
+
+-- Command to check the schema/user is giving proper output or not
+SELECT username, account_status FROM dba_users WHERE username = 'KUMAR';
+
+grant connect to KUMAR;
