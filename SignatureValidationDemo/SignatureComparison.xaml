@@ -1,0 +1,140 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SignatureComparison" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:SignatureValidationDemo;assembly=DataService.SignatureValidationDemo" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ExtractedSignatureFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_OriginalSignatureDownloadPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_PayerName" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>628,1407</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SignatureComparison_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>SignatureValidationDemo</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.MLServices</x:String>
+      <x:String>UiPath.MLServices.Enums</x:String>
+      <x:String>UiPath.MLServices.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>DataService.SignatureValidationDemo</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.MLServices</AssemblyReference>
+      <AssemblyReference>UiPath.MLServices.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SignatureComparison" sap:VirtualizedContainerService.HintSize="392,1342" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IList(s:SignatureData)" Name="PayerInformation" />
+      <Variable x:TypeArguments="x:String" Name="SignaturePaths" />
+      <Variable x:TypeArguments="x:String" Name="JSONResponse" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uda:QueryEntityRecords x:TypeArguments="s:SignatureData" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="350,231" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[PayerInformation]" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+      <uda:QueryEntityRecords.FilterArguments>
+        <uda:FilterArgument FilterActivityType="s:SignatureData">
+          <uda:FilterArgument.Filter>
+            <uda:GroupFilter Operator="and">
+              <uda:GroupFilter.Filters>
+                <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                  <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="CustomerName" FieldType="System.String" Operator="=" ValueIndex="0" />
+                </scg:List>
+              </uda:GroupFilter.Filters>
+              <uda:GroupFilter.Groups>
+                <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+              </uda:GroupFilter.Groups>
+            </uda:GroupFilter>
+          </uda:FilterArgument.Filter>
+        </uda:FilterArgument>
+      </uda:QueryEntityRecords.FilterArguments>
+      <uda:QueryEntityRecords.FilterValues>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">[in_PayerName]</InArgument>
+        </scg:List>
+      </uda:QueryEntityRecords.FilterValues>
+    </uda:QueryEntityRecords>
+    <uda:DownloadFileFromRecordField x:TypeArguments="s:SignatureData" ContinueOnError="False" DisplayName="Download File from Record Field" Field="CustomerSignature" FilePath="[in_OriginalSignatureDownloadPath + in_PayerName + &quot;.jpg&quot;]" sap:VirtualizedContainerService.HintSize="350,288" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_1" RecordId="[PayerInformation(0).Id]" TimeoutInMs="30000" />
+    <Assign sap:VirtualizedContainerService.HintSize="350,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SignaturePaths]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_ExtractedSignatureFilePath + "," + in_OriginalSignatureDownloadPath + in_PayerName + ".jpg"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uma:MLSkills ApiKey="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SkillURL="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="350,420" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[SignaturePaths]" JsonResponse="[JSONResponse]" NextPageNum="2" RefreshList="False" TotalCount="2">
+      <uma:MLSkills.MLSkillList>
+        <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
+          <um:MLSkill AccessUri="https://ai-uipath.deskover.com/mlskills/dc4ed1b1-fa1a-4ebe-b51f-59f4b48c83fe/262ed00d-c1e1-4bfa-aba0-3419a048d848/skill-objectdetection" AccountId="dc4ed1b1-fa1a-4ebe-b51f-59f4b48c83fe" Description="" Id="67e84dff-a252-470d-a9e1-00ac64f26d0e" InputDescription="Path to the image to be analyzed.&#xA;&#xA;" InputType="FILE" Name="Skill_ObjectDetection" OutputDescription="JSON with identified object’s class byte array representation (allows you to see box around objects), identified object’s class - name, score (between 0-1) Example: { &quot;Predicted ByteArray&quot;: &quot;/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgI…TD&quot;, &quot;Predicted Class&quot;: &quot;[{'class': 'book', 'score': ' 0.31'}, {'class': 'dog', 'score': ' 0.53'}, {'class': 'chair', 'score': ' 0.79'}]&quot; }&#xA;" ProjectId="ddd03288-ae15-4f32-877c-845603003119" TenantId="262ed00d-c1e1-4bfa-aba0-3419a048d848" />
+          <x:Reference>__ReferenceID0</x:Reference>
+        </scg:List>
+      </uma:MLSkills.MLSkillList>
+      <uma:MLSkills.SelectedMLSkill>
+        <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath.deskover.com/mlskills/dc4ed1b1-fa1a-4ebe-b51f-59f4b48c83fe/262ed00d-c1e1-4bfa-aba0-3419a048d848/skill-signaturecomparison" AccountId="dc4ed1b1-fa1a-4ebe-b51f-59f4b48c83fe" Description="" Id="c24ed7c2-da85-4d04-90d2-8fa1fda4114d" InputDescription="A pair of signature images in a list. Files formats accepted are png, and jpeg." InputType="FILE_LIST" Name="Skill_SignatureComparison" OutputDescription="Similarity score (between 0 and 1) and a preliminary determination if the signatures are from the same author or different authors based on a defined threshold in a Json format." ProjectId="ddd03288-ae15-4f32-877c-845603003119" TenantId="262ed00d-c1e1-4bfa-aba0-3419a048d848" />
+      </uma:MLSkills.SelectedMLSkill>
+    </uma:MLSkills>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="350,71" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[JSONResponse]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,103 @@
+ExtractionResult 
+{ 
+	DocumentId="Cheque083654", 
+	ExtractorPayloads=ExtractorPayload[0] { }, 
+	ResultsDocument=ResultsDocument 
+	{ 
+		Bounds=ResultsDocumentBounds 
+		{ 
+			PageCount=1, 
+			StartPage=0, 
+			TextLength=576, 
+			TextStartIndex=0 
+		}, 
+		DataVersion=1, 
+		DocumentCategory="Payments", 
+		DocumentGroup="Financial", 
+		DocumentTypeDataVersion=0, 
+		DocumentTypeField=ResultsValue 
+		{ 
+			Components=ResultsDataPoint[0] { }, 
+			Confidence=1, 
+			DerivedFields=ResultsDerivedField[0] { }, 
+			OcrConfidence=1, 
+			OperatorConfirmed=true, 
+			Reference=ResultsContentReference 
+			{ 
+				TextLength=0, 
+				TextStartIndex=0, 
+				Tokens=ResultsValueTokens[0] { } 
+			}, 
+			UnformattedValue="", 
+			Value="Checks" 
+		}, 
+		DocumentTypeId="Financial.Payments.Checks", 
+		DocumentTypeName="Checks", 
+		DocumentTypeSource=Automatic, 
+		Fields=ResultsDataPoint[7] 
+		{ 
+			ResultsDataPoint 
+			{ 
+				DataSource=Automatic, 
+				DataVersion=0, 
+				FieldId="Financial.Payments.Checks.PayName", 
+				FieldName="Pay Name", 
+				FieldType=Text, 
+				IsMissing=false, 
+				OperatorConfirmed=true, 
+				Values=ResultsValue[1] 
+				{ 
+					ResultsValue 
+					{ 
+						Components=ResultsDataPoint[0] { }, 
+						Confidence=1, 
+						DerivedFields=ResultsDerivedField[0] { }, 
+						OcrConfidence=1, 
+						OperatorConfirmed=true, 
+						Reference=ResultsContentReference 
+						{ 
+							TextLength=22, 
+							TextStartIndex=252, 
+							Tokens=ResultsValueTokens[1] 
+							{ 
+								ResultsValueTokens 
+								{ 
+									Boxes=Box[3] 
+									{ 
+										T:199,L:420,W:366,H:130, 
+										T:199,L:829,W:302,H:130, 
+										T:199,L:1152,W:280,H:130 
+									}, 
+									Page=0, 
+									PageHeight=1093, 
+									PageWidth=2372, 
+									TextLength=22, 
+									TextStartIndex=252 
+								} 
+							} 
+						}, 
+						UnformattedValue="", 
+						Value="DadabaD. Pradeep Kumar" 
+					} 
+				} 
+			}, 
+			ResultsDataPoint 
+			{ 
+				DataSource=Automatic, 
+				DataVersion=0, 
+				FieldId="Financial.Payments.Checks.Amount", 
+				FieldName="Amount", 
+				FieldType=Text, 
+				IsMissing=false, 
+				OperatorConfirmed=true, 
+				Values=ResultsValue[1] 
+				{ 
+					ResultsValue 
+					{ 
+						Components=ResultsDataPoint[0] { }, 
+						Confidence=1, 
+						DerivedFields=ResultsDerivedField[0] { }, 
+						OcrConfidence=1, 
+						OperatorConfirmed=true, 
+						Reference=ResultsContentReference 
+						{ TextLength=11, TextStartIndex=336, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[1] { T:407,L:1829,W:418,H:96 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=11, TextStartIndex=336 } } }, UnformattedValue="", Value="88.00,000/-" } } }, ResultsDataPoint { DataSource=Automatic, DataVersion=0, FieldId="Financial.Payments.Checks.Signature", FieldName="Signature", FieldType=Boolean, IsMissing=false, OperatorConfirmed=true, Values=ResultsValue[1] { ResultsValue { Components=ResultsDataPoint[0] { }, Confidence=1, DerivedFields=ResultsDerivedField[0] { }, OcrConfidence=1, OperatorConfirmed=true, Reference=ResultsContentReference { TextLength=0, TextStartIndex=0, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[1] { T:636.2866,L:1876.869,W:341.3861,H:245.0743 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=0, TextStartIndex=0 } } }, UnformattedValue="", Value="Yes" } } }, ResultsDataPoint { DataSource=Automatic, DataVersion=0, FieldId="Financial.Payments.Checks.CheckNumber", FieldName="Check Number", FieldType=Text, IsMissing=false, OperatorConfirmed=true, Values=ResultsValue[1] { ResultsValue { Components=ResultsDataPoint[0] { }, Confidence=1, DerivedFields=ResultsDerivedField[0] { }, OcrConfidence=1, OperatorConfirmed=true, Reference=ResultsContentReference { TextLength=6, TextStartIndex=469, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[1] { T:987,L:634,W:219,H:45 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=6, TextStartIndex=469 } } }, UnformattedValue="", Value="083654" } } }, ResultsDataPoint { DataSource=Automatic, DataVersion=0, FieldId="Financial.Payments.Checks.AccountNumber", FieldName="Account Number", FieldType=Text, IsMissing=false, OperatorConfirmed=true, Values=ResultsValue[1] { ResultsValue { Components=ResultsDataPoint[0] { }, Confidence=1, DerivedFields=ResultsDerivedField[0] { }, OcrConfidence=1, OperatorConfirmed=true, Reference=ResultsContentReference { TextLength=21, TextStartIndex=358, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[8] { T:545,L:385,W:37,H:58, T:541,L:429,W:416,H:61, T:547,L:847,W:28,H:53, T:548,L:901,W:34,H:53, T:550,L:957,W:36,H:49, T:545,L:1015,W:33,H:54, T:547,L:1071,W:42,H:51, T:545,L:1148,W:39,H:59 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=21, TextStartIndex=358 } } }, UnformattedValue="", Value="3 0002010 1 0 8 8 4 1" } } }, ResultsDataPoint { DataSource=Automatic, DataVersion=0, FieldId="Financial.Payments.Checks.MICRCode", FieldName="MICR Code", FieldType=Text, IsMissing=false, OperatorConfirmed=true, Values=ResultsValue[1] { ResultsValue { Components=ResultsDataPoint[0] { }, Confidence=1, DerivedFields=ResultsDerivedField[0] { }, OcrConfidence=1, OperatorConfirmed=true, Reference=ResultsContentReference { TextLength=9, TextStartIndex=476, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[1] { T:988,L:940,W:339,H:45 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=9, TextStartIndex=476 } } }, UnformattedValue="", Value="500025033" } } }, ResultsDataPoint { DataSource=Automatic, DataVersion=0, FieldId="Financial.Payments.Checks.CheckDate", FieldName="Check Date", FieldType=Date, IsMissing=false, OperatorConfirmed=true, Values=ResultsValue[1] { ResultsValue { Components=ResultsDataPoint[0] { }, Confidence=1, DerivedFields=ResultsDerivedField[3] { ResultsDerivedField { FieldId="Day", Value="15" }, ResultsDerivedField { FieldId="Month", Value="3" }, ResultsDerivedField { FieldId="Year", Value="2016" } }, OcrConfidence=1, OperatorConfirmed=true, Reference=ResultsContentReference { TextLength=8, TextStartIndex=107, Tokens=ResultsValueTokens[1] { ResultsValueTokens { Boxes=Box[1] { T:82,L:1784,W:516,H:76 }, Page=0, PageHeight=1093, PageWidth=2372, TextLength=8, TextStartIndex=107 } } }, UnformattedValue="", Value="15032016" } } } }, Language="eng" }, ResultsVersion=1 }

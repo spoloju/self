@@ -1,0 +1,72 @@
+{
+  "name": "SignatureValidationDemo",
+  "description": "Blank Process",
+  "main": "CheckDataExtraction.xaml",
+  "dependencies": {
+    "ImageActivities.Activities": "[1.0.7450.18996]",
+    "UiPath.DataService.Activities": "[21.10.1]",
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.15.1-preview]",
+    "UiPath.Excel.Activities": "[2.13.0-preview]",
+    "UiPath.IntelligentOCR.Activities": "[6.3.1-preview]",
+    "UiPath.Mail.Activities": "[1.16.0-preview]",
+    "UiPath.MLServices.Activities": "[1.2.2-preview]",
+    "UiPath.OCR.Activities": "[3.8.0-preview]",
+    "UiPath.System.Activities": "[22.7.0-preview]",
+    "UiPath.Testing.Activities": "[22.7.0-preview]",
+    "UiPath.UIAutomation.Activities": "[22.7.0-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "UIPathLahiruFernando",
+      "namespace": "SignatureValidationDemo",
+      "uniqueReference": "uxOva+vjm5uyVofKCz+0YQ+k6HAGVg8utRBgNJXqM3k="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.7.0.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "CheckDataExtraction.xaml",
+      "uniqueId": "910d7874-753c-48c4-b28d-351521eba4c8",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
